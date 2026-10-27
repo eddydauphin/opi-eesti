@@ -1,0 +1,285 @@
+{
+  "title": "Õpi eesti keelt",
+  "language": "et-EE",
+  "units": [
+    {
+      "id": "u1",
+      "title": "Tervitused",
+      "subtitle": "Greetings",
+      "tip": "Estonian has no grammatical gender and no articles: \"tere\" works for everyone, and \"mees\" means \"man\", \"a man\" and \"the man\". Word stress is almost always on the first syllable, so say TE-re, not te-RE.",
+      "lessons": [
+        {
+          "id": "u1l1",
+          "title": "Tere!",
+          "words": [
+            {"et": "tere", "en": "hello", "alt_en": ["hi"]},
+            {"et": "tere hommikust", "en": "good morning"},
+            {"et": "tere õhtust", "en": "good evening"},
+            {"et": "kuidas läheb?", "en": "how is it going?", "alt_en": ["how are you?", "how's it going?"]},
+            {"et": "hästi", "en": "well", "alt_en": ["fine", "good"]},
+            {"et": "aitäh", "en": "thank you", "alt_en": ["thanks"]},
+            {"et": "ja", "en": "and"},
+            {"et": "head aega", "en": "goodbye", "alt_en": ["bye"]}
+          ],
+          "sentences": [
+            {"et": "Tere hommikust!", "en": "Good morning!"},
+            {"et": "Tere, kuidas läheb?", "en": "Hello, how is it going?", "alt_en": ["Hi, how are you?", "Hello, how are you?"]},
+            {"et": "Hästi, aitäh!", "en": "Well, thank you!", "alt_en": ["Fine, thanks!", "Good, thank you!"]},
+            {"et": "Tere õhtust ja head aega!", "en": "Good evening and goodbye!"}
+          ]
+        },
+        {
+          "id": "u1l2",
+          "title": "Jah ja ei",
+          "words": [
+            {"et": "jah", "en": "yes"},
+            {"et": "ei", "en": "no"},
+            {"et": "palun", "en": "please", "alt_en": ["you're welcome"]},
+            {"et": "vabandust", "en": "sorry", "alt_en": ["excuse me"]},
+            {"et": "nägemist", "en": "see you", "alt_en": ["goodbye"]},
+            {"et": "head ööd", "en": "good night"},
+            {"et": "tere tulemast", "en": "welcome"},
+            {"et": "ma ei saa aru", "en": "I don't understand", "alt_en": ["I do not understand"]}
+          ],
+          "sentences": [
+            {"et": "Jah, palun.", "en": "Yes, please."},
+            {"et": "Ei, aitäh.", "en": "No, thank you.", "alt_en": ["No, thanks."]},
+            {"et": "Vabandust, ma ei saa aru.", "en": "Sorry, I don't understand.", "alt_en": ["Sorry, I do not understand."]},
+            {"et": "Head ööd ja nägemist!", "en": "Good night and see you!"},
+            {"et": "Tere tulemast!", "en": "Welcome!"}
+          ]
+        },
+        {
+          "id": "u1l3",
+          "title": "Mina olen",
+          "tip": "\"Mina olen\" (I am) and \"sina oled\" (you are). In everyday speech people shorten the pronouns to \"ma\" and \"sa\". \"Sina\" is the informal you; use \"teie\" with strangers and officials.",
+          "words": [
+            {"et": "mina", "en": "I"},
+            {"et": "sina", "en": "you"},
+            {"et": "olen", "en": "am"},
+            {"et": "oled", "en": "are"},
+            {"et": "on", "en": "is"},
+            {"et": "minu nimi", "en": "my name"},
+            {"et": "kes", "en": "who"}
+          ],
+          "sentences": [
+            {"et": "Mina olen Eddy.", "en": "I am Eddy."},
+            {"et": "Kes sina oled?", "en": "Who are you?"},
+            {"et": "Minu nimi on Anna.", "en": "My name is Anna."},
+            {"et": "Sina oled Mari.", "en": "You are Mari."},
+            {"et": "Tere, mina olen Eddy.", "en": "Hello, I am Eddy."}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u2",
+      "title": "Numbrid",
+      "subtitle": "Numbers",
+      "tip": "After any number bigger than one, the noun takes the partitive singular: \"üks euro\" but \"kaks eurot\", \"kümme eurot\". You will meet the partitive a lot in Estonian.",
+      "lessons": [
+        {
+          "id": "u2l1",
+          "title": "Üks kuni viis",
+          "words": [
+            {"et": "üks", "en": "one"},
+            {"et": "kaks", "en": "two"},
+            {"et": "kolm", "en": "three"},
+            {"et": "neli", "en": "four"},
+            {"et": "viis", "en": "five"}
+          ],
+          "sentences": [
+            {"et": "Üks, kaks, kolm.", "en": "One, two, three."},
+            {"et": "Üks ja kaks on kolm.", "en": "One and two is three.", "alt_en": ["One and two are three."]},
+            {"et": "Neli ja üks on viis.", "en": "Four and one is five.", "alt_en": ["Four and one are five."]},
+            {"et": "Kaks ja kaks on neli.", "en": "Two and two is four.", "alt_en": ["Two and two are four."]}
+          ]
+        },
+        {
+          "id": "u2l2",
+          "title": "Kuus kuni kümme",
+          "words": [
+            {"et": "kuus", "en": "six"},
+            {"et": "seitse", "en": "seven"},
+            {"et": "kaheksa", "en": "eight"},
+            {"et": "üheksa", "en": "nine"},
+            {"et": "kümme", "en": "ten"},
+            {"et": "null", "en": "zero"}
+          ],
+          "sentences": [
+            {"et": "Viis ja viis on kümme.", "en": "Five and five is ten.", "alt_en": ["Five and five are ten."]},
+            {"et": "Seitse ja kaks on üheksa.", "en": "Seven and two is nine.", "alt_en": ["Seven and two are nine."]},
+            {"et": "Kuus ja kaks on kaheksa.", "en": "Six and two is eight.", "alt_en": ["Six and two are eight."]},
+            {"et": "Null, üks, kaks.", "en": "Zero, one, two."}
+          ]
+        },
+        {
+          "id": "u2l3",
+          "title": "Kui palju?",
+          "words": [
+            {"et": "kui palju", "en": "how much", "alt_en": ["how many"]},
+            {"et": "see", "en": "this", "alt_en": ["it", "that"]},
+            {"et": "maksab", "en": "costs"},
+            {"et": "euro", "en": "euro"},
+            {"et": "eurot", "en": "euros"},
+            {"et": "palju", "en": "a lot", "alt_en": ["much", "many"]},
+            {"et": "vähe", "en": "a little", "alt_en": ["few", "little"]}
+          ],
+          "sentences": [
+            {"et": "Kui palju see maksab?", "en": "How much does this cost?", "alt_en": ["How much does it cost?"]},
+            {"et": "See maksab kümme eurot.", "en": "This costs ten euros.", "alt_en": ["It costs ten euros."]},
+            {"et": "Üks euro, palun.", "en": "One euro, please."},
+            {"et": "Kaks eurot, palun.", "en": "Two euros, please."},
+            {"et": "See on palju.", "en": "This is a lot.", "alt_en": ["That is a lot.", "It is a lot."]}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u3",
+      "title": "Inimesed",
+      "subtitle": "People",
+      "tip": "\"Tema\" (short form \"ta\") means both he and she. Place endings do the work prepositions do in English: Tallinn-as = in Tallinn, Tallinn-ast = from Tallinn, Eesti-s = in Estonia, Eesti-st = from Estonia.",
+      "lessons": [
+        {
+          "id": "u3l1",
+          "title": "Mees ja naine",
+          "words": [
+            {"et": "mees", "en": "man"},
+            {"et": "naine", "en": "woman"},
+            {"et": "laps", "en": "child"},
+            {"et": "lapsed", "en": "children"},
+            {"et": "sõber", "en": "friend"},
+            {"et": "sõbrad", "en": "friends"},
+            {"et": "tema", "en": "he", "alt_en": ["she"]},
+            {"et": "meie", "en": "we"},
+            {"et": "nemad", "en": "they"},
+            {"et": "oleme", "en": "are (we)", "alt_en": ["are"]}
+          ],
+          "sentences": [
+            {"et": "Tema on mees.", "en": "He is a man."},
+            {"et": "Tema on naine.", "en": "She is a woman."},
+            {"et": "Tema on minu sõber.", "en": "He is my friend.", "alt_en": ["She is my friend."]},
+            {"et": "Meie oleme sõbrad.", "en": "We are friends."},
+            {"et": "Nemad on lapsed.", "en": "They are children."}
+          ]
+        },
+        {
+          "id": "u3l2",
+          "title": "Kes sa oled?",
+          "words": [
+            {"et": "ta", "en": "he", "alt_en": ["she"]},
+            {"et": "sa", "en": "you"},
+            {"et": "kas", "en": "(question word)", "alt_en": ["whether"]},
+            {"et": "õpilane", "en": "student", "alt_en": ["pupil"]},
+            {"et": "õpetaja", "en": "teacher"},
+            {"et": "arst", "en": "doctor"},
+            {"et": "insener", "en": "engineer"},
+            {"et": "eestlane", "en": "Estonian", "alt_en": ["an Estonian"]},
+            {"et": "prantslane", "en": "French", "alt_en": ["a Frenchman", "a French person"]}
+          ],
+          "sentences": [
+            {"et": "Mina olen insener.", "en": "I am an engineer."},
+            {"et": "Ta on õpetaja.", "en": "She is a teacher.", "alt_en": ["He is a teacher."]},
+            {"et": "Kas sa oled arst?", "en": "Are you a doctor?"},
+            {"et": "Kas sina oled eestlane?", "en": "Are you Estonian?"},
+            {"et": "Ei, mina olen prantslane.", "en": "No, I am French."}
+          ]
+        },
+        {
+          "id": "u3l3",
+          "title": "Kust sa oled?",
+          "words": [
+            {"et": "kust", "en": "where from", "alt_en": ["from where"]},
+            {"et": "Eestist", "en": "from Estonia"},
+            {"et": "Prantsusmaalt", "en": "from France"},
+            {"et": "Tallinnast", "en": "from Tallinn"},
+            {"et": "Eestis", "en": "in Estonia"},
+            {"et": "Tallinnas", "en": "in Tallinn"},
+            {"et": "elan", "en": "live (I)", "alt_en": ["live"]},
+            {"et": "elad", "en": "live (you)", "alt_en": ["live"]}
+          ],
+          "sentences": [
+            {"et": "Kust sina oled?", "en": "Where are you from?"},
+            {"et": "Mina olen Prantsusmaalt.", "en": "I am from France."},
+            {"et": "Ta on Tallinnast.", "en": "He is from Tallinn.", "alt_en": ["She is from Tallinn."]},
+            {"et": "Mina elan Tallinnas.", "en": "I live in Tallinn."},
+            {"et": "Kas sina elad Eestis?", "en": "Do you live in Estonia?"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u4",
+      "title": "Toit",
+      "subtitle": "Food",
+      "tip": "When you eat, drink or want something, the thing takes the partitive case: leib → leiba, vesi → vett, kohv → kohvi, tee → teed. \"Ma joon vett\" = I drink water.",
+      "lessons": [
+        {
+          "id": "u4l1",
+          "title": "See on leib",
+          "words": [
+            {"et": "leib", "en": "bread", "alt_en": ["rye bread"]},
+            {"et": "vesi", "en": "water"},
+            {"et": "piim", "en": "milk"},
+            {"et": "kohv", "en": "coffee"},
+            {"et": "tee", "en": "tea"},
+            {"et": "õun", "en": "apple"},
+            {"et": "juust", "en": "cheese"}
+          ],
+          "sentences": [
+            {"et": "See on leib.", "en": "This is bread.", "alt_en": ["It is bread.", "That is bread."]},
+            {"et": "See on kohv ja piim.", "en": "This is coffee and milk.", "alt_en": ["It is coffee and milk."]},
+            {"et": "Kas see on tee?", "en": "Is this tea?", "alt_en": ["Is it tea?"]},
+            {"et": "See on õun ja juust.", "en": "This is an apple and cheese.", "alt_en": ["It is an apple and cheese."]},
+            {"et": "Ei, see on vesi.", "en": "No, this is water.", "alt_en": ["No, it is water."]}
+          ]
+        },
+        {
+          "id": "u4l2",
+          "title": "Ma söön ja joon",
+          "words": [
+            {"et": "ma", "en": "I"},
+            {"et": "söön", "en": "eat (I)", "alt_en": ["eat"]},
+            {"et": "joon", "en": "drink (I)", "alt_en": ["drink"]},
+            {"et": "tahan", "en": "want (I)", "alt_en": ["want"]},
+            {"et": "tahad", "en": "want (you)", "alt_en": ["want"]},
+            {"et": "leiba", "en": "bread (object)", "alt_en": ["bread"]},
+            {"et": "vett", "en": "water (object)", "alt_en": ["water"]},
+            {"et": "kohvi", "en": "coffee (object)", "alt_en": ["coffee"]},
+            {"et": "teed", "en": "tea (object)", "alt_en": ["tea"]},
+            {"et": "õuna", "en": "apple (object)", "alt_en": ["apple"]}
+          ],
+          "sentences": [
+            {"et": "Ma söön leiba.", "en": "I eat bread.", "alt_en": ["I am eating bread."]},
+            {"et": "Ma joon vett.", "en": "I drink water.", "alt_en": ["I am drinking water."]},
+            {"et": "Ma tahan kohvi.", "en": "I want coffee."},
+            {"et": "Kas sa tahad teed?", "en": "Do you want tea?"},
+            {"et": "Ma söön õuna.", "en": "I eat an apple.", "alt_en": ["I am eating an apple."]}
+          ]
+        },
+        {
+          "id": "u4l3",
+          "title": "Kohvikus",
+          "words": [
+            {"et": "kohvik", "en": "café", "alt_en": ["cafe", "coffee shop"]},
+            {"et": "kohvikus", "en": "in the café", "alt_en": ["in the cafe", "at the café"]},
+            {"et": "arve", "en": "the bill", "alt_en": ["bill", "check"]},
+            {"et": "maitsev", "en": "tasty", "alt_en": ["delicious"]},
+            {"et": "head isu", "en": "enjoy your meal", "alt_en": ["bon appétit"]},
+            {"et": "üks kohv", "en": "one coffee"},
+            {"et": "kaks kohvi", "en": "two coffees"}
+          ],
+          "sentences": [
+            {"et": "Üks kohv, palun.", "en": "One coffee, please."},
+            {"et": "Kaks kohvi, palun.", "en": "Two coffees, please."},
+            {"et": "Arve, palun.", "en": "The bill, please."},
+            {"et": "See on maitsev.", "en": "This is tasty.", "alt_en": ["It is tasty.", "This is delicious."]},
+            {"et": "Head isu!", "en": "Enjoy your meal!", "alt_en": ["Bon appétit!"]},
+            {"et": "Mina olen kohvikus.", "en": "I am in the café.", "alt_en": ["I am at the café.", "I am in the cafe."]}
+          ]
+        }
+      ]
+    }
+  ]
+}
