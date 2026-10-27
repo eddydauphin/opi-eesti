@@ -40,13 +40,15 @@ the content, and add a table to `lib/l10n/strings.dart`.
 ## Getting the APK
 
 Every push runs the GitHub Actions workflow, which lints, tests and builds a
-release APK. Download it from the workflow run's **Artifacts** (file
-`opi-eesti-apk`), copy it to the phone and open it. Android will ask you to
-allow installing from unknown sources the first time.
+release APK. On `main` it also refreshes the rolling **Latest build**
+release, so the newest APK is always at:
 
-Tag a commit `v0.1.0` and the same workflow attaches the APK to a GitHub
-release, which gives a direct download link that works from the phone's
-browser.
+https://github.com/eddydauphin/opi-eesti/releases/download/latest/opi-eesti.apk
+
+Open that link on the phone, download, tap the file and allow the install
+when Android asks. The APK is also attached to each workflow run under
+**Artifacts**, and tagging a commit `v1.2.3` attaches it to a versioned
+release.
 
 ## Developing
 
