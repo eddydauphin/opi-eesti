@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../app_scope.dart';
+import '../l10n/strings.dart';
+import 'language_screen.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -8,48 +10,54 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final scope = AppScope.of(context);
+    final t = scope.strings;
     return Scaffold(
-      appBar: AppBar(title: const Text('Settings')),
+      appBar: AppBar(title: Text(t.settings)),
       body: ListenableBuilder(
-        listenable: scope.tts,
+        listenable: Listenable.merge([scope.tts, scope.settings]),
         builder: (context, _) {
           final available = scope.tts.isAvailable;
           return ListView(
             children: [
               ListTile(
+                leading: const Icon(Icons.language),
+                title: Text(t.language),
+                subtitle: Text(Strings.languageNames[scope.lang] ?? scope.lang),
+                trailing: const Icon(Icons.chevron_right),
+                onTap: () => Navigator.of(context).push(
+                  MaterialPageRoute(builder: (_) => const LanguageScreen()),
+                ),
+              ),
+              const Divider(),
+              ListTile(
                 leading: Icon(available ? Icons.volume_up : Icons.volume_off,
                     color: available ? Colors.green : Colors.orange),
-                title: const Text('Estonian voice'),
-                subtitle: Text(available
-                    ? 'Installed. Listening exercises work offline.'
-                    : 'Not installed. On the phone go to Settings › System › '
-                        'Languages › Text-to-speech, open Google Speech Services '
-                        'and install the Estonian voice while online. '
-                        'Until then listening exercises are skipped.'),
+                title: Text(t.estonianVoice),
+                subtitle: Text(available ? t.voiceInstalled : t.voiceMissing),
                 trailing: available
                     ? TextButton(
                         onPressed: () => scope.tts.speak('Tere! Kuidas läheb?'),
-                        child: const Text('Test'),
+                        child: Text(t.test),
                       )
                     : TextButton(
                         onPressed: scope.tts.init,
-                        child: const Text('Retry'),
+                        child: Text(t.retry),
                       ),
               ),
               const Divider(),
               ListTile(
                 leading: const Icon(Icons.delete_outline, color: Colors.red),
-                title: const Text('Reset progress'),
-                subtitle: const Text('Clears lessons, XP, streak and word strengths.'),
+                title: Text(t.resetProgress),
+                subtitle: Text(t.resetProgressBody),
                 onTap: () async {
                   final ok = await showDialog<bool>(
                     context: context,
                     builder: (ctx) => AlertDialog(
-                      title: const Text('Reset progress?'),
-                      content: const Text('This cannot be undone.'),
+                      title: Text(t.resetConfirm),
+                      content: Text(t.cannotUndo),
                       actions: [
-                        TextButton(onPressed: () => Navigator.pop(ctx, false), child: const Text('Cancel')),
-                        TextButton(onPressed: () => Navigator.pop(ctx, true), child: const Text('Reset')),
+                        TextButton(onPressed: () => Navigator.pop(ctx, false), child: Text(t.cancel)),
+                        TextButton(onPressed: () => Navigator.pop(ctx, true), child: Text(t.reset)),
                       ],
                     ),
                   );
@@ -57,11 +65,10 @@ class SettingsScreen extends StatelessWidget {
                 },
               ),
               const Divider(),
-              const ListTile(
-                leading: Icon(Icons.info_outline),
-                title: Text('About'),
-                subtitle: Text('Õpi eesti keelt. All lessons are stored on the phone; '
-                    'no internet connection is needed.'),
+              ListTile(
+                leading: const Icon(Icons.info_outline),
+                title: Text(t.about),
+                subtitle: Text(t.aboutBody),
               ),
             ],
           );

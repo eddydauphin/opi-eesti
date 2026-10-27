@@ -17,7 +17,7 @@ class TtsService extends ChangeNotifier {
   bool get isAvailable => _available;
 
   Future<void> init() async {
-    if (_ready) return;
+    if (_ready && _available) return;
     _ready = true;
     try {
       final res = await _tts.isLanguageAvailable(language);

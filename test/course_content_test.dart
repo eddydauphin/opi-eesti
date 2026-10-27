@@ -39,7 +39,39 @@ void main() {
       expect(ets.toSet().length, ets.length, reason: 'duplicate in ${l.id}');
       for (final w in l.words) {
         expect(w.et.trim(), isNotEmpty);
-        expect(w.en.trim(), isNotEmpty);
+      }
+    }
+  });
+
+  test('every word, sentence, subtitle and tip exists in every learner language', () {
+    expect(course.learnerLanguages, containsAll(['en', 'fr', 'es']));
+    for (final lang in course.learnerLanguages) {
+      for (final u in course.units) {
+        expect(u.subtitle.of(lang).trim(), isNotEmpty, reason: '${u.id} subtitle $lang');
+        if (!u.tip.isEmpty) {
+          expect(u.tip.of(lang), isNot(u.tip.of(lang == 'en' ? 'fr' : 'en')),
+              reason: '${u.id} tip not translated to $lang');
+        }
+      }
+      for (final l in course.lessons) {
+        for (final w in l.words) {
+          expect(w.translations[lang], isNotNull, reason: '"${w.et}" has no $lang');
+          expect(w.translations[lang]!.first.trim(), isNotEmpty);
+        }
+        for (final s in l.sentences) {
+          expect(s.translations[lang], isNotNull, reason: '"${s.et}" has no $lang');
+          expect(s.translations[lang]!.first.trim(), isNotEmpty);
+        }
+      }
+    }
+  });
+
+  test('match-pair meanings are distinct within a lesson in every language', () {
+    for (final lang in course.learnerLanguages) {
+      for (final l in course.lessons) {
+        final meanings = l.words.map((w) => w.meaning(lang)).toList();
+        expect(meanings.toSet().length, meanings.length,
+            reason: 'duplicate $lang meaning in ${l.id}: $meanings');
       }
     }
   });

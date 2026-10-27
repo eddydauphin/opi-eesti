@@ -20,15 +20,17 @@ class HomeScreen extends StatelessWidget {
         final progress = scope.progress;
         final lessons = course.lessons;
         final due = progress.dueWords;
+        final t = scope.strings;
+        final lang = scope.lang;
         return Scaffold(
           appBar: AppBar(
-            title: Text(course.title, style: const TextStyle(fontWeight: FontWeight.w800)),
+            title: Text(t.appTitle, style: const TextStyle(fontWeight: FontWeight.w800)),
             actions: [
               _Stat(icon: Icons.local_fire_department, color: Colors.orange, value: '${progress.streak}'),
               _Stat(icon: Icons.bolt, color: Colors.amber.shade700, value: '${progress.xp} XP'),
               IconButton(
                 icon: const Icon(Icons.settings_outlined),
-                tooltip: 'Settings',
+                tooltip: t.settings,
                 onPressed: () => Navigator.of(context).push(
                   MaterialPageRoute(builder: (_) => const SettingsScreen()),
                 ),
@@ -40,7 +42,8 @@ class HomeScreen extends StatelessWidget {
             children: [
               if (due.isNotEmpty)
                 _ReviewCard(
-                  dueCount: due.length,
+                  title: t.review,
+                  subtitle: t.wordsDue(due.length),
                   onTap: () => Navigator.of(context).push(
                     MaterialPageRoute(builder: (_) => LessonScreen.review(due)),
                   ),
@@ -48,6 +51,9 @@ class HomeScreen extends StatelessWidget {
               for (final unit in course.units)
                 _UnitSection(
                   unit: unit,
+                  lang: lang,
+                  tipsLabel: t.tips,
+                  lessonMeta: t.lessonMeta,
                   isUnlocked: (lesson) {
                     final i = lessons.indexWhere((l) => l.id == lesson.id);
                     return i == 0 || progress.isLessonDone(lessons[i - 1].id);
@@ -85,8 +91,9 @@ class _Stat extends StatelessWidget {
 }
 
 class _ReviewCard extends StatelessWidget {
-  const _ReviewCard({required this.dueCount, required this.onTap});
-  final int dueCount;
+  const _ReviewCard({required this.title, required this.subtitle, required this.onTap});
+  final String title;
+  final String subtitle;
   final VoidCallback onTap;
 
   @override
@@ -97,11 +104,8 @@ class _ReviewCard extends StatelessWidget {
       child: ListTile(
         onTap: onTap,
         leading: const Icon(Icons.refresh, color: Colors.white, size: 32),
-        title: const Text('Review', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w800)),
-        subtitle: Text(
-          '$dueCount ${dueCount == 1 ? 'word is' : 'words are'} due for practice',
-          style: const TextStyle(color: Colors.white70),
-        ),
+        title: Text(title, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w800)),
+        subtitle: Text(subtitle, style: const TextStyle(color: Colors.white70)),
         trailing: const Icon(Icons.chevron_right, color: Colors.white),
       ),
     );
@@ -111,12 +115,18 @@ class _ReviewCard extends StatelessWidget {
 class _UnitSection extends StatelessWidget {
   const _UnitSection({
     required this.unit,
+    required this.lang,
+    required this.tipsLabel,
+    required this.lessonMeta,
     required this.isUnlocked,
     required this.isDone,
     required this.onOpen,
   });
 
   final Unit unit;
+  final String lang;
+  final String tipsLabel;
+  final String Function(int words, int sentences) lessonMeta;
   final bool Function(Lesson) isUnlocked;
   final bool Function(Lesson) isDone;
   final void Function(Lesson) onOpen;
@@ -144,17 +154,17 @@ class _UnitSection extends StatelessWidget {
                     children: [
                       Text(unit.title,
                           style: const TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w800)),
-                      Text(unit.subtitle, style: const TextStyle(color: Colors.white70)),
+                      Text(unit.subtitle.of(lang), style: const TextStyle(color: Colors.white70)),
                     ],
                   ),
                 ),
-                if (unit.tip != null)
+                if (!unit.tip.isEmpty)
                   IconButton(
                     icon: const Icon(Icons.menu_book, color: Colors.white),
-                    tooltip: 'Tips',
+                    tooltip: tipsLabel,
                     onPressed: () => showModalBottomSheet<void>(
                       context: context,
-                      builder: (_) => _TipSheet(title: unit.title, tip: unit.tip!),
+                      builder: (_) => _TipSheet(title: unit.title, tip: unit.tip.of(lang)),
                     ),
                   ),
                 Text('$doneCount/${unit.lessons.length}',
@@ -166,6 +176,7 @@ class _UnitSection extends StatelessWidget {
           for (final lesson in unit.lessons)
             _LessonTile(
               lesson: lesson,
+              meta: lessonMeta(lesson.words.length, lesson.sentences.length),
               unlocked: isUnlocked(lesson),
               done: isDone(lesson),
               onTap: () => onOpen(lesson),
@@ -179,12 +190,14 @@ class _UnitSection extends StatelessWidget {
 class _LessonTile extends StatelessWidget {
   const _LessonTile({
     required this.lesson,
+    required this.meta,
     required this.unlocked,
     required this.done,
     required this.onTap,
   });
 
   final Lesson lesson;
+  final String meta;
   final bool unlocked;
   final bool done;
   final VoidCallback onTap;
@@ -211,7 +224,7 @@ class _LessonTile extends StatelessWidget {
         child: Icon(icon, color: Colors.white, size: 28),
       ),
       title: Text(lesson.title, style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 17)),
-      subtitle: Text('${lesson.words.length} words · ${lesson.sentences.length} sentences'),
+      subtitle: Text(meta),
       trailing: unlocked ? const Icon(Icons.chevron_right) : null,
     );
   }

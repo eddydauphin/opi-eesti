@@ -77,9 +77,44 @@ void main() {
       final keys = ex.expand((e) => e.wordKeys).toSet();
       expect(keys, containsAll(['tere', 'aitäh', 'jah']));
     });
+
+    test('generates valid exercises in French and Spanish too', () {
+      for (final lang in ['fr', 'es']) {
+        final gen = ExerciseGenerator(course, lang: lang, random: Random(7));
+        for (final lesson in course.lessons) {
+          final exercises = gen.forLesson(lesson);
+          for (final ex in exercises) {
+            switch (ex) {
+              case ChoiceExercise():
+                expect(ex.options.toSet().length, 4, reason: '$lang ${lesson.id} ${ex.question}');
+              case BuildSentenceExercise():
+                expect(LessonSession.checkBuild(ex, ex.answerTokens), isTrue,
+                    reason: '$lang ${lesson.id} ${ex.source}');
+              case ListenTypeExercise():
+                expect(ex.translation, isNotEmpty);
+              case MatchPairsExercise():
+                expect(ex.pairs.map((p) => p.$2).toSet().length, ex.pairs.length);
+            }
+          }
+        }
+      }
+      final fr = ExerciseGenerator(course, lang: 'fr', random: Random(8))
+          .forLesson(course.lessons.first)
+          .whereType<ChoiceExercise>()
+          .first;
+      expect(fr.prompt, 'Que veut dire ce mot ?');
+    });
   });
 
   group('lesson session', () {
+    test('French answers are checked against French alternatives', () {
+      final s = course.lessons.first.sentences
+          .firstWhere((s) => s.et == 'Tere, kuidas läheb?');
+      expect(answersMatch('salut ça va', s.accepted('fr')), isTrue);
+      expect(answersMatch('hola que tal', s.accepted('es')), isFalse);
+      expect(answersMatch('Hola, ¿qué tal?', s.accepted('es')), isTrue);
+    });
+
     test('wrong answers are repeated until correct', () {
       final gen = ExerciseGenerator(course, random: Random(6));
       final session = LessonSession(gen.forLesson(course.lessons.first), lessonId: 'u1l1');

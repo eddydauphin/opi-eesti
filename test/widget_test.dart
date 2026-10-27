@@ -6,6 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:opi_eesti/main.dart';
 import 'package:opi_eesti/models/course.dart';
 import 'package:opi_eesti/services/progress_store.dart';
+import 'package:opi_eesti/services/settings_store.dart';
 import 'package:opi_eesti/services/tts_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -18,10 +19,32 @@ void main() {
     SharedPreferences.setMockInitialValues({});
   });
 
+  testWidgets('first launch asks for the language, then shows the tree', (tester) async {
+    await tester.pumpWidget(OpiEestiApp(
+      course: course,
+      progress: ProgressStore(),
+      settings: SettingsStore(),
+      tts: TtsService(),
+    ));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Français'), findsOneWidget);
+    await tester.tap(find.byKey(const ValueKey('lang_fr')));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Tervitused'), findsOneWidget);
+    expect(find.text('Salutations'), findsOneWidget);
+    await tester.tap(find.text('Tere!'));
+    await tester.pumpAndSettle();
+    expect(find.text('Que veut dire ce mot ?'), findsOneWidget);
+    expect(find.widgetWithText(FilledButton, 'Vérifier'), findsOneWidget);
+  });
+
   testWidgets('home shows units and opens the first lesson', (tester) async {
     await tester.pumpWidget(OpiEestiApp(
       course: course,
       progress: ProgressStore(),
+      settings: SettingsStore(language: 'en'),
       tts: TtsService(),
     ));
     await tester.pumpAndSettle();
@@ -41,6 +64,7 @@ void main() {
     await tester.pumpWidget(OpiEestiApp(
       course: course,
       progress: ProgressStore(),
+      settings: SettingsStore(language: 'en'),
       tts: TtsService(),
     ));
     await tester.pumpAndSettle();

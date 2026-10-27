@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../app_scope.dart';
 import '../theme.dart';
 
 /// Shown when a lesson or review ends.
@@ -20,6 +21,7 @@ class SessionCompleteScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final pct = (accuracy * 100).round();
+    final t = AppScope.of(context).strings;
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -33,20 +35,20 @@ class SessionCompleteScreen extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: const TextStyle(fontSize: 28, fontWeight: FontWeight.w800)),
               const SizedBox(height: 8),
-              const Text('Tubli! (Well done!)', style: TextStyle(fontSize: 18, color: Colors.black54)),
+              Text(t.wellDone, style: const TextStyle(fontSize: 18, color: Colors.black54)),
               const SizedBox(height: 32),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  _Badge(label: 'XP', value: '+$xpEarned', color: Colors.amber.shade700),
-                  _Badge(label: 'Accuracy', value: '$pct%', color: successGreen),
-                  _Badge(label: 'Streak', value: '$streak', color: Colors.orange),
+                  _Badge(label: t.xp, value: '+$xpEarned', color: Colors.amber.shade700),
+                  _Badge(label: t.accuracy, value: '$pct%', color: successGreen),
+                  _Badge(label: t.streak, value: '$streak', color: Colors.orange),
                 ],
               ),
               const Spacer(),
               FilledButton(
                 onPressed: () => Navigator.of(context).popUntil((r) => r.isFirst),
-                child: const Text('Continue'),
+                child: Text(t.continueLabel),
               ),
             ],
           ),

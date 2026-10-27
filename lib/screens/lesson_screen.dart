@@ -43,7 +43,7 @@ class _LessonScreenState extends State<LessonScreen> {
     super.didChangeDependencies();
     if (_session != null) return;
     final scope = AppScope.of(context);
-    final gen = ExerciseGenerator(scope.course);
+    final gen = ExerciseGenerator(scope.course, lang: scope.lang);
     final lesson = widget.lesson;
     final exercises = lesson != null
         ? gen.forLesson(lesson, includeListening: scope.tts.isAvailable)
@@ -126,7 +126,7 @@ class _LessonScreenState extends State<LessonScreen> {
     if (!mounted) return;
     Navigator.of(context).pushReplacement(MaterialPageRoute(
       builder: (_) => SessionCompleteScreen(
-        title: widget.lesson?.title ?? 'Review complete',
+        title: widget.lesson?.title ?? scope.strings.reviewComplete,
         xpEarned: session.xpEarned,
         accuracy: session.accuracy,
         streak: scope.progress.streak,
@@ -149,14 +149,15 @@ class _LessonScreenState extends State<LessonScreen> {
   }
 
   Future<bool> _confirmQuit() async {
+    final t = AppScope.of(context).strings;
     final ok = await showDialog<bool>(
       context: context,
       builder: (ctx) => AlertDialog(
-        title: const Text('Quit this lesson?'),
-        content: const Text('Progress in this lesson will be lost.'),
+        title: Text(t.quitTitle),
+        content: Text(t.quitBody),
         actions: [
-          TextButton(onPressed: () => Navigator.pop(ctx, false), child: const Text('Keep going')),
-          TextButton(onPressed: () => Navigator.pop(ctx, true), child: const Text('Quit')),
+          TextButton(onPressed: () => Navigator.pop(ctx, false), child: Text(t.keepGoing)),
+          TextButton(onPressed: () => Navigator.pop(ctx, true), child: Text(t.quit)),
         ],
       ),
     );
@@ -260,6 +261,7 @@ class _LessonScreenState extends State<LessonScreen> {
   }
 
   Widget _bottomBar(Exercise ex) {
+    final t = AppScope.of(context).strings;
     final result = _result;
     if (result == null) {
       return Padding(
@@ -268,7 +270,7 @@ class _LessonScreenState extends State<LessonScreen> {
           listenable: _typed,
           builder: (context, _) => FilledButton(
             onPressed: _canCheck ? _check : null,
-            child: const Text('Check'),
+            child: Text(t.check),
           ),
         ),
       );
@@ -291,13 +293,13 @@ class _LessonScreenState extends State<LessonScreen> {
             children: [
               Icon(result ? Icons.check_circle : Icons.cancel, color: color, size: 30),
               const SizedBox(width: 8),
-              Text(result ? 'Correct!' : 'Not quite',
+              Text(result ? t.correct : t.notQuite,
                   style: TextStyle(color: color, fontSize: 20, fontWeight: FontWeight.w800)),
             ],
           ),
           if (!result || ex is ListenTypeExercise) ...[
             const SizedBox(height: 8),
-            Text(result ? 'Meaning:' : 'Correct answer:',
+            Text(result ? t.meaning : t.correctAnswer,
                 style: TextStyle(color: color, fontWeight: FontWeight.w700)),
             Text(result && ex is ListenTypeExercise ? ex.translation : correctText,
                 style: const TextStyle(fontSize: 17)),
@@ -306,7 +308,7 @@ class _LessonScreenState extends State<LessonScreen> {
           FilledButton(
             style: FilledButton.styleFrom(backgroundColor: color),
             onPressed: _continue,
-            child: const Text('Continue'),
+            child: Text(t.continueLabel),
           ),
         ],
       ),

@@ -5,69 +5,411 @@
     {
       "id": "u1",
       "title": "Tervitused",
-      "subtitle": "Greetings",
-      "tip": "Estonian has no grammatical gender and no articles: \"tere\" works for everyone, and \"mees\" means \"man\", \"a man\" and \"the man\". Word stress is almost always on the first syllable, so say TE-re, not te-RE.",
+      "subtitle": {
+        "en": "Greetings",
+        "fr": "Salutations",
+        "es": "Saludos"
+      },
+      "tip": {
+        "en": "Estonian has no grammatical gender and no articles: \"tere\" works for everyone, and \"mees\" means \"man\", \"a man\" and \"the man\". Word stress is almost always on the first syllable, so say TE-re, not te-RE.",
+        "fr": "L'estonien n'a ni genre grammatical ni articles : « tere » convient à tout le monde, et « mees » signifie « homme », « un homme » et « l'homme ». L'accent tombe presque toujours sur la première syllabe : TE-re, pas te-RE.",
+        "es": "El estonio no tiene género gramatical ni artículos: «tere» sirve para todos, y «mees» significa «hombre», «un hombre» y «el hombre». El acento cae casi siempre en la primera sílaba: TE-re, no te-RE."
+      },
       "lessons": [
         {
           "id": "u1l1",
           "title": "Tere!",
           "words": [
-            {"et": "tere", "en": "hello", "alt_en": ["hi"]},
-            {"et": "tere hommikust", "en": "good morning"},
-            {"et": "tere õhtust", "en": "good evening"},
-            {"et": "kuidas läheb?", "en": "how is it going?", "alt_en": ["how are you?", "how's it going?"]},
-            {"et": "hästi", "en": "well", "alt_en": ["fine", "good"]},
-            {"et": "aitäh", "en": "thank you", "alt_en": ["thanks"]},
-            {"et": "ja", "en": "and"},
-            {"et": "head aega", "en": "goodbye", "alt_en": ["bye"]}
+            {
+              "et": "tere",
+              "en": "hello",
+              "alt_en": [
+                "hi"
+              ],
+              "fr": "bonjour",
+              "es": "hola",
+              "alt_fr": [
+                "salut"
+              ]
+            },
+            {
+              "et": "tere hommikust",
+              "en": "good morning",
+              "fr": "bonjour (le matin)",
+              "es": "buenos días",
+              "alt_fr": [
+                "bonjour"
+              ]
+            },
+            {
+              "et": "tere õhtust",
+              "en": "good evening",
+              "fr": "bonsoir",
+              "es": "buenas tardes",
+              "alt_es": [
+                "buenas noches"
+              ]
+            },
+            {
+              "et": "kuidas läheb?",
+              "en": "how is it going?",
+              "alt_en": [
+                "how are you?",
+                "how's it going?"
+              ],
+              "fr": "comment ça va ?",
+              "es": "¿cómo estás?",
+              "alt_fr": [
+                "ça va ?",
+                "comment vas-tu ?"
+              ],
+              "alt_es": [
+                "¿qué tal?",
+                "¿cómo va?"
+              ]
+            },
+            {
+              "et": "hästi",
+              "en": "well",
+              "alt_en": [
+                "fine",
+                "good"
+              ],
+              "fr": "bien",
+              "es": "bien"
+            },
+            {
+              "et": "aitäh",
+              "en": "thank you",
+              "alt_en": [
+                "thanks"
+              ],
+              "fr": "merci",
+              "es": "gracias"
+            },
+            {
+              "et": "ja",
+              "en": "and",
+              "fr": "et",
+              "es": "y"
+            },
+            {
+              "et": "head aega",
+              "en": "goodbye",
+              "alt_en": [
+                "bye"
+              ],
+              "fr": "au revoir",
+              "es": "adiós"
+            }
           ],
           "sentences": [
-            {"et": "Tere hommikust!", "en": "Good morning!"},
-            {"et": "Tere, kuidas läheb?", "en": "Hello, how is it going?", "alt_en": ["Hi, how are you?", "Hello, how are you?"]},
-            {"et": "Hästi, aitäh!", "en": "Well, thank you!", "alt_en": ["Fine, thanks!", "Good, thank you!"]},
-            {"et": "Tere õhtust ja head aega!", "en": "Good evening and goodbye!"}
+            {
+              "et": "Tere hommikust!",
+              "en": "Good morning!",
+              "fr": "Bonjour !",
+              "es": "¡Buenos días!"
+            },
+            {
+              "et": "Tere, kuidas läheb?",
+              "en": "Hello, how is it going?",
+              "alt_en": [
+                "Hi, how are you?",
+                "Hello, how are you?"
+              ],
+              "fr": "Bonjour, comment ça va ?",
+              "es": "Hola, ¿cómo estás?",
+              "alt_fr": [
+                "Salut, ça va ?",
+                "Bonjour, ça va ?"
+              ],
+              "alt_es": [
+                "Hola, ¿qué tal?"
+              ]
+            },
+            {
+              "et": "Hästi, aitäh!",
+              "en": "Well, thank you!",
+              "alt_en": [
+                "Fine, thanks!",
+                "Good, thank you!"
+              ],
+              "fr": "Bien, merci !",
+              "es": "¡Bien, gracias!"
+            },
+            {
+              "et": "Tere õhtust ja head aega!",
+              "en": "Good evening and goodbye!",
+              "fr": "Bonsoir et au revoir !",
+              "es": "¡Buenas tardes y adiós!",
+              "alt_es": [
+                "¡Buenas noches y adiós!"
+              ]
+            }
           ]
         },
         {
           "id": "u1l2",
           "title": "Jah ja ei",
           "words": [
-            {"et": "jah", "en": "yes"},
-            {"et": "ei", "en": "no"},
-            {"et": "palun", "en": "please", "alt_en": ["you're welcome"]},
-            {"et": "vabandust", "en": "sorry", "alt_en": ["excuse me"]},
-            {"et": "nägemist", "en": "see you", "alt_en": ["goodbye"]},
-            {"et": "head ööd", "en": "good night"},
-            {"et": "tere tulemast", "en": "welcome"},
-            {"et": "ma ei saa aru", "en": "I don't understand", "alt_en": ["I do not understand"]}
+            {
+              "et": "jah",
+              "en": "yes",
+              "fr": "oui",
+              "es": "sí"
+            },
+            {
+              "et": "ei",
+              "en": "no",
+              "fr": "non",
+              "es": "no"
+            },
+            {
+              "et": "palun",
+              "en": "please",
+              "alt_en": [
+                "you're welcome"
+              ],
+              "fr": "s'il vous plaît",
+              "es": "por favor",
+              "alt_fr": [
+                "s'il te plaît",
+                "de rien"
+              ],
+              "alt_es": [
+                "de nada"
+              ]
+            },
+            {
+              "et": "vabandust",
+              "en": "sorry",
+              "alt_en": [
+                "excuse me"
+              ],
+              "fr": "pardon",
+              "es": "perdón",
+              "alt_fr": [
+                "désolé",
+                "excusez-moi"
+              ],
+              "alt_es": [
+                "lo siento",
+                "disculpe"
+              ]
+            },
+            {
+              "et": "nägemist",
+              "en": "see you",
+              "alt_en": [
+                "goodbye"
+              ],
+              "fr": "à bientôt",
+              "es": "hasta luego",
+              "alt_fr": [
+                "au revoir"
+              ],
+              "alt_es": [
+                "nos vemos",
+                "adiós"
+              ]
+            },
+            {
+              "et": "head ööd",
+              "en": "good night",
+              "fr": "bonne nuit",
+              "es": "buenas noches"
+            },
+            {
+              "et": "tere tulemast",
+              "en": "welcome",
+              "fr": "bienvenue",
+              "es": "bienvenido",
+              "alt_es": [
+                "bienvenida",
+                "bienvenidos"
+              ]
+            },
+            {
+              "et": "ma ei saa aru",
+              "en": "I don't understand",
+              "alt_en": [
+                "I do not understand"
+              ],
+              "fr": "je ne comprends pas",
+              "es": "no entiendo"
+            }
           ],
           "sentences": [
-            {"et": "Jah, palun.", "en": "Yes, please."},
-            {"et": "Ei, aitäh.", "en": "No, thank you.", "alt_en": ["No, thanks."]},
-            {"et": "Vabandust, ma ei saa aru.", "en": "Sorry, I don't understand.", "alt_en": ["Sorry, I do not understand."]},
-            {"et": "Head ööd ja nägemist!", "en": "Good night and see you!"},
-            {"et": "Tere tulemast!", "en": "Welcome!"}
+            {
+              "et": "Jah, palun.",
+              "en": "Yes, please.",
+              "fr": "Oui, s'il vous plaît.",
+              "es": "Sí, por favor.",
+              "alt_fr": [
+                "Oui, s'il te plaît."
+              ]
+            },
+            {
+              "et": "Ei, aitäh.",
+              "en": "No, thank you.",
+              "alt_en": [
+                "No, thanks."
+              ],
+              "fr": "Non, merci.",
+              "es": "No, gracias."
+            },
+            {
+              "et": "Vabandust, ma ei saa aru.",
+              "en": "Sorry, I don't understand.",
+              "alt_en": [
+                "Sorry, I do not understand."
+              ],
+              "fr": "Pardon, je ne comprends pas.",
+              "es": "Perdón, no entiendo.",
+              "alt_fr": [
+                "Désolé, je ne comprends pas."
+              ],
+              "alt_es": [
+                "Lo siento, no entiendo."
+              ]
+            },
+            {
+              "et": "Head ööd ja nägemist!",
+              "en": "Good night and see you!",
+              "fr": "Bonne nuit et à bientôt !",
+              "es": "¡Buenas noches y hasta luego!",
+              "alt_fr": [
+                "Bonne nuit et au revoir !"
+              ],
+              "alt_es": [
+                "¡Buenas noches y adiós!"
+              ]
+            },
+            {
+              "et": "Tere tulemast!",
+              "en": "Welcome!",
+              "fr": "Bienvenue !",
+              "es": "¡Bienvenido!",
+              "alt_es": [
+                "¡Bienvenida!",
+                "¡Bienvenidos!"
+              ]
+            }
           ]
         },
         {
           "id": "u1l3",
           "title": "Mina olen",
-          "tip": "\"Mina olen\" (I am) and \"sina oled\" (you are). In everyday speech people shorten the pronouns to \"ma\" and \"sa\". \"Sina\" is the informal you; use \"teie\" with strangers and officials.",
+          "tip": {
+            "en": "\"Mina olen\" (I am) and \"sina oled\" (you are). In everyday speech people shorten the pronouns to \"ma\" and \"sa\". \"Sina\" is the informal you; use \"teie\" with strangers and officials.",
+            "fr": "« Mina olen » (je suis) et « sina oled » (tu es). À l'oral, on raccourcit les pronoms en « ma » et « sa ». « Sina » est le tutoiement ; avec les inconnus et l'administration, on dit « teie ».",
+            "es": "«Mina olen» (yo soy) y «sina oled» (tú eres). Al hablar, los pronombres se acortan a «ma» y «sa». «Sina» es el tuteo; con desconocidos y en trámites se usa «teie»."
+          },
           "words": [
-            {"et": "mina", "en": "I"},
-            {"et": "sina", "en": "you"},
-            {"et": "olen", "en": "am"},
-            {"et": "oled", "en": "are"},
-            {"et": "on", "en": "is"},
-            {"et": "minu nimi", "en": "my name"},
-            {"et": "kes", "en": "who"}
+            {
+              "et": "mina",
+              "en": "I",
+              "fr": "je",
+              "es": "yo",
+              "alt_fr": [
+                "moi"
+              ]
+            },
+            {
+              "et": "sina",
+              "en": "you",
+              "fr": "tu",
+              "es": "tú",
+              "alt_fr": [
+                "toi"
+              ]
+            },
+            {
+              "et": "olen",
+              "en": "am",
+              "fr": "suis",
+              "es": "soy"
+            },
+            {
+              "et": "oled",
+              "en": "are",
+              "fr": "es",
+              "es": "eres"
+            },
+            {
+              "et": "on",
+              "en": "is",
+              "fr": "est",
+              "es": "es"
+            },
+            {
+              "et": "minu nimi",
+              "en": "my name",
+              "fr": "mon nom",
+              "es": "mi nombre"
+            },
+            {
+              "et": "kes",
+              "en": "who",
+              "fr": "qui",
+              "es": "quién"
+            }
           ],
           "sentences": [
-            {"et": "Mina olen Eddy.", "en": "I am Eddy."},
-            {"et": "Kes sina oled?", "en": "Who are you?"},
-            {"et": "Minu nimi on Anna.", "en": "My name is Anna."},
-            {"et": "Sina oled Mari.", "en": "You are Mari."},
-            {"et": "Tere, mina olen Eddy.", "en": "Hello, I am Eddy."}
+            {
+              "et": "Mina olen Eddy.",
+              "en": "I am Eddy.",
+              "fr": "Je suis Eddy.",
+              "es": "Yo soy Eddy.",
+              "alt_es": [
+                "Soy Eddy."
+              ]
+            },
+            {
+              "et": "Kes sina oled?",
+              "en": "Who are you?",
+              "fr": "Qui es-tu ?",
+              "es": "¿Quién eres tú?",
+              "alt_fr": [
+                "Tu es qui ?"
+              ],
+              "alt_es": [
+                "¿Quién eres?"
+              ]
+            },
+            {
+              "et": "Minu nimi on Anna.",
+              "en": "My name is Anna.",
+              "fr": "Mon nom est Anna.",
+              "es": "Mi nombre es Anna.",
+              "alt_fr": [
+                "Je m'appelle Anna."
+              ],
+              "alt_es": [
+                "Me llamo Anna."
+              ]
+            },
+            {
+              "et": "Sina oled Mari.",
+              "en": "You are Mari.",
+              "fr": "Tu es Mari.",
+              "es": "Tú eres Mari.",
+              "alt_es": [
+                "Eres Mari."
+              ]
+            },
+            {
+              "et": "Tere, mina olen Eddy.",
+              "en": "Hello, I am Eddy.",
+              "fr": "Bonjour, je suis Eddy.",
+              "es": "Hola, yo soy Eddy.",
+              "alt_fr": [
+                "Salut, je suis Eddy."
+              ],
+              "alt_es": [
+                "Hola, soy Eddy."
+              ]
+            }
           ]
         }
       ]
@@ -75,62 +417,350 @@
     {
       "id": "u2",
       "title": "Numbrid",
-      "subtitle": "Numbers",
-      "tip": "After any number bigger than one, the noun takes the partitive singular: \"üks euro\" but \"kaks eurot\", \"kümme eurot\". You will meet the partitive a lot in Estonian.",
+      "subtitle": {
+        "en": "Numbers",
+        "fr": "Les nombres",
+        "es": "Números"
+      },
+      "tip": {
+        "en": "After any number bigger than one, the noun takes the partitive singular: \"üks euro\" but \"kaks eurot\", \"kümme eurot\". You will meet the partitive a lot in Estonian.",
+        "fr": "Après un nombre supérieur à un, le nom se met au partitif singulier : « üks euro » mais « kaks eurot », « kümme eurot ». Le partitif est partout en estonien.",
+        "es": "Después de un número mayor que uno, el sustantivo va en partitivo singular: «üks euro» pero «kaks eurot», «kümme eurot». El partitivo aparece muchísimo en estonio."
+      },
       "lessons": [
         {
           "id": "u2l1",
           "title": "Üks kuni viis",
           "words": [
-            {"et": "üks", "en": "one"},
-            {"et": "kaks", "en": "two"},
-            {"et": "kolm", "en": "three"},
-            {"et": "neli", "en": "four"},
-            {"et": "viis", "en": "five"}
+            {
+              "et": "üks",
+              "en": "one",
+              "fr": "un",
+              "es": "uno",
+              "alt_fr": [
+                "une"
+              ],
+              "alt_es": [
+                "una",
+                "un"
+              ]
+            },
+            {
+              "et": "kaks",
+              "en": "two",
+              "fr": "deux",
+              "es": "dos"
+            },
+            {
+              "et": "kolm",
+              "en": "three",
+              "fr": "trois",
+              "es": "tres"
+            },
+            {
+              "et": "neli",
+              "en": "four",
+              "fr": "quatre",
+              "es": "cuatro"
+            },
+            {
+              "et": "viis",
+              "en": "five",
+              "fr": "cinq",
+              "es": "cinco"
+            }
           ],
           "sentences": [
-            {"et": "Üks, kaks, kolm.", "en": "One, two, three."},
-            {"et": "Üks ja kaks on kolm.", "en": "One and two is three.", "alt_en": ["One and two are three."]},
-            {"et": "Neli ja üks on viis.", "en": "Four and one is five.", "alt_en": ["Four and one are five."]},
-            {"et": "Kaks ja kaks on neli.", "en": "Two and two is four.", "alt_en": ["Two and two are four."]}
+            {
+              "et": "Üks, kaks, kolm.",
+              "en": "One, two, three.",
+              "fr": "Un, deux, trois.",
+              "es": "Uno, dos, tres."
+            },
+            {
+              "et": "Üks ja kaks on kolm.",
+              "en": "One and two is three.",
+              "alt_en": [
+                "One and two are three."
+              ],
+              "fr": "Un et deux font trois.",
+              "es": "Uno y dos son tres.",
+              "alt_fr": [
+                "Un plus deux égale trois.",
+                "Un et deux est trois."
+              ],
+              "alt_es": [
+                "Uno más dos es tres."
+              ]
+            },
+            {
+              "et": "Neli ja üks on viis.",
+              "en": "Four and one is five.",
+              "alt_en": [
+                "Four and one are five."
+              ],
+              "fr": "Quatre et un font cinq.",
+              "es": "Cuatro y uno son cinco.",
+              "alt_fr": [
+                "Quatre plus un égale cinq."
+              ],
+              "alt_es": [
+                "Cuatro más uno es cinco."
+              ]
+            },
+            {
+              "et": "Kaks ja kaks on neli.",
+              "en": "Two and two is four.",
+              "alt_en": [
+                "Two and two are four."
+              ],
+              "fr": "Deux et deux font quatre.",
+              "es": "Dos y dos son cuatro.",
+              "alt_fr": [
+                "Deux plus deux égale quatre."
+              ],
+              "alt_es": [
+                "Dos más dos es cuatro."
+              ]
+            }
           ]
         },
         {
           "id": "u2l2",
           "title": "Kuus kuni kümme",
           "words": [
-            {"et": "kuus", "en": "six"},
-            {"et": "seitse", "en": "seven"},
-            {"et": "kaheksa", "en": "eight"},
-            {"et": "üheksa", "en": "nine"},
-            {"et": "kümme", "en": "ten"},
-            {"et": "null", "en": "zero"}
+            {
+              "et": "kuus",
+              "en": "six",
+              "fr": "six",
+              "es": "seis"
+            },
+            {
+              "et": "seitse",
+              "en": "seven",
+              "fr": "sept",
+              "es": "siete"
+            },
+            {
+              "et": "kaheksa",
+              "en": "eight",
+              "fr": "huit",
+              "es": "ocho"
+            },
+            {
+              "et": "üheksa",
+              "en": "nine",
+              "fr": "neuf",
+              "es": "nueve"
+            },
+            {
+              "et": "kümme",
+              "en": "ten",
+              "fr": "dix",
+              "es": "diez"
+            },
+            {
+              "et": "null",
+              "en": "zero",
+              "fr": "zéro",
+              "es": "cero"
+            }
           ],
           "sentences": [
-            {"et": "Viis ja viis on kümme.", "en": "Five and five is ten.", "alt_en": ["Five and five are ten."]},
-            {"et": "Seitse ja kaks on üheksa.", "en": "Seven and two is nine.", "alt_en": ["Seven and two are nine."]},
-            {"et": "Kuus ja kaks on kaheksa.", "en": "Six and two is eight.", "alt_en": ["Six and two are eight."]},
-            {"et": "Null, üks, kaks.", "en": "Zero, one, two."}
+            {
+              "et": "Viis ja viis on kümme.",
+              "en": "Five and five is ten.",
+              "alt_en": [
+                "Five and five are ten."
+              ],
+              "fr": "Cinq et cinq font dix.",
+              "es": "Cinco y cinco son diez.",
+              "alt_fr": [
+                "Cinq plus cinq égale dix."
+              ],
+              "alt_es": [
+                "Cinco más cinco es diez."
+              ]
+            },
+            {
+              "et": "Seitse ja kaks on üheksa.",
+              "en": "Seven and two is nine.",
+              "alt_en": [
+                "Seven and two are nine."
+              ],
+              "fr": "Sept et deux font neuf.",
+              "es": "Siete y dos son nueve.",
+              "alt_fr": [
+                "Sept plus deux égale neuf."
+              ],
+              "alt_es": [
+                "Siete más dos es nueve."
+              ]
+            },
+            {
+              "et": "Kuus ja kaks on kaheksa.",
+              "en": "Six and two is eight.",
+              "alt_en": [
+                "Six and two are eight."
+              ],
+              "fr": "Six et deux font huit.",
+              "es": "Seis y dos son ocho.",
+              "alt_fr": [
+                "Six plus deux égale huit."
+              ],
+              "alt_es": [
+                "Seis más dos es ocho."
+              ]
+            },
+            {
+              "et": "Null, üks, kaks.",
+              "en": "Zero, one, two.",
+              "fr": "Zéro, un, deux.",
+              "es": "Cero, uno, dos."
+            }
           ]
         },
         {
           "id": "u2l3",
           "title": "Kui palju?",
           "words": [
-            {"et": "kui palju", "en": "how much", "alt_en": ["how many"]},
-            {"et": "see", "en": "this", "alt_en": ["it", "that"]},
-            {"et": "maksab", "en": "costs"},
-            {"et": "euro", "en": "euro"},
-            {"et": "eurot", "en": "euros"},
-            {"et": "palju", "en": "a lot", "alt_en": ["much", "many"]},
-            {"et": "vähe", "en": "a little", "alt_en": ["few", "little"]}
+            {
+              "et": "kui palju",
+              "en": "how much",
+              "alt_en": [
+                "how many"
+              ],
+              "fr": "combien",
+              "es": "cuánto",
+              "alt_es": [
+                "cuántos",
+                "cuánto cuesta"
+              ]
+            },
+            {
+              "et": "see",
+              "en": "this",
+              "alt_en": [
+                "it",
+                "that"
+              ],
+              "fr": "ceci",
+              "es": "esto",
+              "alt_fr": [
+                "ça",
+                "cela",
+                "ce"
+              ],
+              "alt_es": [
+                "eso",
+                "este"
+              ]
+            },
+            {
+              "et": "maksab",
+              "en": "costs",
+              "fr": "coûte",
+              "es": "cuesta"
+            },
+            {
+              "et": "euro",
+              "en": "euro",
+              "fr": "euro",
+              "es": "euro"
+            },
+            {
+              "et": "eurot",
+              "en": "euros",
+              "fr": "euros",
+              "es": "euros"
+            },
+            {
+              "et": "palju",
+              "en": "a lot",
+              "alt_en": [
+                "much",
+                "many"
+              ],
+              "fr": "beaucoup",
+              "es": "mucho",
+              "alt_es": [
+                "muchos"
+              ]
+            },
+            {
+              "et": "vähe",
+              "en": "a little",
+              "alt_en": [
+                "few",
+                "little"
+              ],
+              "fr": "peu",
+              "es": "poco",
+              "alt_fr": [
+                "un peu"
+              ],
+              "alt_es": [
+                "un poco"
+              ]
+            }
           ],
           "sentences": [
-            {"et": "Kui palju see maksab?", "en": "How much does this cost?", "alt_en": ["How much does it cost?"]},
-            {"et": "See maksab kümme eurot.", "en": "This costs ten euros.", "alt_en": ["It costs ten euros."]},
-            {"et": "Üks euro, palun.", "en": "One euro, please."},
-            {"et": "Kaks eurot, palun.", "en": "Two euros, please."},
-            {"et": "See on palju.", "en": "This is a lot.", "alt_en": ["That is a lot.", "It is a lot."]}
+            {
+              "et": "Kui palju see maksab?",
+              "en": "How much does this cost?",
+              "alt_en": [
+                "How much does it cost?"
+              ],
+              "fr": "Combien ça coûte ?",
+              "es": "¿Cuánto cuesta esto?",
+              "alt_fr": [
+                "Ça coûte combien ?",
+                "Combien cela coûte-t-il ?"
+              ],
+              "alt_es": [
+                "¿Cuánto cuesta?"
+              ]
+            },
+            {
+              "et": "See maksab kümme eurot.",
+              "en": "This costs ten euros.",
+              "alt_en": [
+                "It costs ten euros."
+              ],
+              "fr": "Ça coûte dix euros.",
+              "es": "Esto cuesta diez euros.",
+              "alt_fr": [
+                "Cela coûte dix euros."
+              ],
+              "alt_es": [
+                "Cuesta diez euros."
+              ]
+            },
+            {
+              "et": "Üks euro, palun.",
+              "en": "One euro, please.",
+              "fr": "Un euro, s'il vous plaît.",
+              "es": "Un euro, por favor."
+            },
+            {
+              "et": "Kaks eurot, palun.",
+              "en": "Two euros, please.",
+              "fr": "Deux euros, s'il vous plaît.",
+              "es": "Dos euros, por favor."
+            },
+            {
+              "et": "See on palju.",
+              "en": "This is a lot.",
+              "alt_en": [
+                "That is a lot.",
+                "It is a lot."
+              ],
+              "fr": "C'est beaucoup.",
+              "es": "Esto es mucho.",
+              "alt_es": [
+                "Es mucho."
+              ]
+            }
           ]
         }
       ]
@@ -138,73 +768,523 @@
     {
       "id": "u3",
       "title": "Inimesed",
-      "subtitle": "People",
-      "tip": "\"Tema\" (short form \"ta\") means both he and she. Place endings do the work prepositions do in English: Tallinn-as = in Tallinn, Tallinn-ast = from Tallinn, Eesti-s = in Estonia, Eesti-st = from Estonia.",
+      "subtitle": {
+        "en": "People",
+        "fr": "Les gens",
+        "es": "Personas"
+      },
+      "tip": {
+        "en": "\"Tema\" (short form \"ta\") means both he and she. Place endings do the work prepositions do in English: Tallinn-as = in Tallinn, Tallinn-ast = from Tallinn, Eesti-s = in Estonia, Eesti-st = from Estonia.",
+        "fr": "« Tema » (forme courte « ta ») veut dire il et elle. Les terminaisons remplacent nos prépositions : Tallinn-as = à Tallinn, Tallinn-ast = de Tallinn, Eesti-s = en Estonie, Eesti-st = d'Estonie.",
+        "es": "«Tema» (forma corta «ta») significa él y ella. Las terminaciones hacen el trabajo de nuestras preposiciones: Tallinn-as = en Tallin, Tallinn-ast = de Tallin, Eesti-s = en Estonia, Eesti-st = de Estonia."
+      },
       "lessons": [
         {
           "id": "u3l1",
           "title": "Mees ja naine",
           "words": [
-            {"et": "mees", "en": "man"},
-            {"et": "naine", "en": "woman"},
-            {"et": "laps", "en": "child"},
-            {"et": "lapsed", "en": "children"},
-            {"et": "sõber", "en": "friend"},
-            {"et": "sõbrad", "en": "friends"},
-            {"et": "tema", "en": "he", "alt_en": ["she"]},
-            {"et": "meie", "en": "we"},
-            {"et": "nemad", "en": "they"},
-            {"et": "oleme", "en": "are (we)", "alt_en": ["are"]}
+            {
+              "et": "mees",
+              "en": "man",
+              "fr": "homme",
+              "es": "hombre",
+              "alt_fr": [
+                "un homme"
+              ]
+            },
+            {
+              "et": "naine",
+              "en": "woman",
+              "fr": "femme",
+              "es": "mujer",
+              "alt_fr": [
+                "une femme"
+              ]
+            },
+            {
+              "et": "laps",
+              "en": "child",
+              "fr": "enfant",
+              "es": "niño",
+              "alt_es": [
+                "niña"
+              ]
+            },
+            {
+              "et": "lapsed",
+              "en": "children",
+              "fr": "enfants",
+              "es": "niños"
+            },
+            {
+              "et": "sõber",
+              "en": "friend",
+              "fr": "ami",
+              "es": "amigo",
+              "alt_fr": [
+                "amie"
+              ],
+              "alt_es": [
+                "amiga"
+              ]
+            },
+            {
+              "et": "sõbrad",
+              "en": "friends",
+              "fr": "amis",
+              "es": "amigos",
+              "alt_fr": [
+                "amies"
+              ],
+              "alt_es": [
+                "amigas"
+              ]
+            },
+            {
+              "et": "tema",
+              "en": "he",
+              "alt_en": [
+                "she"
+              ],
+              "fr": "il",
+              "es": "él",
+              "alt_fr": [
+                "elle"
+              ],
+              "alt_es": [
+                "ella"
+              ]
+            },
+            {
+              "et": "meie",
+              "en": "we",
+              "fr": "nous",
+              "es": "nosotros",
+              "alt_es": [
+                "nosotras"
+              ]
+            },
+            {
+              "et": "nemad",
+              "en": "they",
+              "fr": "ils",
+              "es": "ellos",
+              "alt_fr": [
+                "elles"
+              ],
+              "alt_es": [
+                "ellas"
+              ]
+            },
+            {
+              "et": "oleme",
+              "en": "are (we)",
+              "alt_en": [
+                "are"
+              ],
+              "fr": "sommes",
+              "es": "somos"
+            }
           ],
           "sentences": [
-            {"et": "Tema on mees.", "en": "He is a man."},
-            {"et": "Tema on naine.", "en": "She is a woman."},
-            {"et": "Tema on minu sõber.", "en": "He is my friend.", "alt_en": ["She is my friend."]},
-            {"et": "Meie oleme sõbrad.", "en": "We are friends."},
-            {"et": "Nemad on lapsed.", "en": "They are children."}
+            {
+              "et": "Tema on mees.",
+              "en": "He is a man.",
+              "fr": "C'est un homme.",
+              "es": "Él es un hombre.",
+              "alt_fr": [
+                "Il est un homme."
+              ],
+              "alt_es": [
+                "Es un hombre."
+              ]
+            },
+            {
+              "et": "Tema on naine.",
+              "en": "She is a woman.",
+              "fr": "C'est une femme.",
+              "es": "Ella es una mujer.",
+              "alt_fr": [
+                "Elle est une femme."
+              ],
+              "alt_es": [
+                "Es una mujer."
+              ]
+            },
+            {
+              "et": "Tema on minu sõber.",
+              "en": "He is my friend.",
+              "alt_en": [
+                "She is my friend."
+              ],
+              "fr": "Il est mon ami.",
+              "es": "Él es mi amigo.",
+              "alt_fr": [
+                "C'est mon ami.",
+                "Elle est mon amie.",
+                "C'est mon amie."
+              ],
+              "alt_es": [
+                "Es mi amigo.",
+                "Ella es mi amiga."
+              ]
+            },
+            {
+              "et": "Meie oleme sõbrad.",
+              "en": "We are friends.",
+              "fr": "Nous sommes amis.",
+              "es": "Nosotros somos amigos.",
+              "alt_fr": [
+                "Nous sommes des amis."
+              ],
+              "alt_es": [
+                "Somos amigos."
+              ]
+            },
+            {
+              "et": "Nemad on lapsed.",
+              "en": "They are children.",
+              "fr": "Ce sont des enfants.",
+              "es": "Ellos son niños.",
+              "alt_fr": [
+                "Ils sont des enfants."
+              ],
+              "alt_es": [
+                "Son niños."
+              ]
+            }
           ]
         },
         {
           "id": "u3l2",
           "title": "Kes sa oled?",
           "words": [
-            {"et": "ta", "en": "he", "alt_en": ["she"]},
-            {"et": "sa", "en": "you"},
-            {"et": "kas", "en": "(question word)", "alt_en": ["whether"]},
-            {"et": "õpilane", "en": "student", "alt_en": ["pupil"]},
-            {"et": "õpetaja", "en": "teacher"},
-            {"et": "arst", "en": "doctor"},
-            {"et": "insener", "en": "engineer"},
-            {"et": "eestlane", "en": "Estonian", "alt_en": ["an Estonian"]},
-            {"et": "prantslane", "en": "French", "alt_en": ["a Frenchman", "a French person"]}
+            {
+              "et": "ta",
+              "en": "he",
+              "alt_en": [
+                "she"
+              ],
+              "fr": "il",
+              "es": "él",
+              "alt_fr": [
+                "elle"
+              ],
+              "alt_es": [
+                "ella"
+              ]
+            },
+            {
+              "et": "sa",
+              "en": "you",
+              "fr": "tu",
+              "es": "tú"
+            },
+            {
+              "et": "kas",
+              "en": "(question word)",
+              "alt_en": [
+                "whether"
+              ],
+              "fr": "(mot interrogatif)",
+              "es": "(partícula interrogativa)",
+              "alt_fr": [
+                "est-ce que"
+              ]
+            },
+            {
+              "et": "õpilane",
+              "en": "student",
+              "alt_en": [
+                "pupil"
+              ],
+              "fr": "élève",
+              "es": "estudiante",
+              "alt_fr": [
+                "étudiant"
+              ],
+              "alt_es": [
+                "alumno"
+              ]
+            },
+            {
+              "et": "õpetaja",
+              "en": "teacher",
+              "fr": "professeur",
+              "es": "profesor",
+              "alt_fr": [
+                "enseignant",
+                "prof"
+              ],
+              "alt_es": [
+                "profesora",
+                "maestro"
+              ]
+            },
+            {
+              "et": "arst",
+              "en": "doctor",
+              "fr": "médecin",
+              "es": "médico",
+              "alt_fr": [
+                "docteur"
+              ],
+              "alt_es": [
+                "doctor",
+                "médica"
+              ]
+            },
+            {
+              "et": "insener",
+              "en": "engineer",
+              "fr": "ingénieur",
+              "es": "ingeniero",
+              "alt_es": [
+                "ingeniera"
+              ]
+            },
+            {
+              "et": "eestlane",
+              "en": "Estonian",
+              "alt_en": [
+                "an Estonian"
+              ],
+              "fr": "Estonien",
+              "es": "estonio",
+              "alt_fr": [
+                "Estonienne",
+                "un Estonien"
+              ],
+              "alt_es": [
+                "estonia"
+              ]
+            },
+            {
+              "et": "prantslane",
+              "en": "French",
+              "alt_en": [
+                "a Frenchman",
+                "a French person"
+              ],
+              "fr": "Français",
+              "es": "francés",
+              "alt_fr": [
+                "Française",
+                "un Français"
+              ],
+              "alt_es": [
+                "francesa"
+              ]
+            }
           ],
           "sentences": [
-            {"et": "Mina olen insener.", "en": "I am an engineer."},
-            {"et": "Ta on õpetaja.", "en": "She is a teacher.", "alt_en": ["He is a teacher."]},
-            {"et": "Kas sa oled arst?", "en": "Are you a doctor?"},
-            {"et": "Kas sina oled eestlane?", "en": "Are you Estonian?"},
-            {"et": "Ei, mina olen prantslane.", "en": "No, I am French."}
+            {
+              "et": "Mina olen insener.",
+              "en": "I am an engineer.",
+              "fr": "Je suis ingénieur.",
+              "es": "Yo soy ingeniero.",
+              "alt_es": [
+                "Soy ingeniero.",
+                "Soy ingeniera."
+              ]
+            },
+            {
+              "et": "Ta on õpetaja.",
+              "en": "She is a teacher.",
+              "alt_en": [
+                "He is a teacher."
+              ],
+              "fr": "Elle est professeur.",
+              "es": "Ella es profesora.",
+              "alt_fr": [
+                "Il est professeur.",
+                "Elle est enseignante."
+              ],
+              "alt_es": [
+                "Él es profesor.",
+                "Es profesora."
+              ]
+            },
+            {
+              "et": "Kas sa oled arst?",
+              "en": "Are you a doctor?",
+              "fr": "Es-tu médecin ?",
+              "es": "¿Eres médico?",
+              "alt_fr": [
+                "Tu es médecin ?",
+                "Est-ce que tu es médecin ?"
+              ],
+              "alt_es": [
+                "¿Tú eres médico?",
+                "¿Eres médica?"
+              ]
+            },
+            {
+              "et": "Kas sina oled eestlane?",
+              "en": "Are you Estonian?",
+              "fr": "Es-tu Estonien ?",
+              "es": "¿Eres estonio?",
+              "alt_fr": [
+                "Tu es Estonien ?",
+                "Es-tu Estonienne ?"
+              ],
+              "alt_es": [
+                "¿Tú eres estonio?",
+                "¿Eres estonia?"
+              ]
+            },
+            {
+              "et": "Ei, mina olen prantslane.",
+              "en": "No, I am French.",
+              "fr": "Non, je suis Français.",
+              "es": "No, yo soy francés.",
+              "alt_fr": [
+                "Non, je suis Française."
+              ],
+              "alt_es": [
+                "No, soy francés.",
+                "No, soy francesa."
+              ]
+            }
           ]
         },
         {
           "id": "u3l3",
           "title": "Kust sa oled?",
           "words": [
-            {"et": "kust", "en": "where from", "alt_en": ["from where"]},
-            {"et": "Eestist", "en": "from Estonia"},
-            {"et": "Prantsusmaalt", "en": "from France"},
-            {"et": "Tallinnast", "en": "from Tallinn"},
-            {"et": "Eestis", "en": "in Estonia"},
-            {"et": "Tallinnas", "en": "in Tallinn"},
-            {"et": "elan", "en": "live (I)", "alt_en": ["live"]},
-            {"et": "elad", "en": "live (you)", "alt_en": ["live"]}
+            {
+              "et": "kust",
+              "en": "where from",
+              "alt_en": [
+                "from where"
+              ],
+              "fr": "d'où",
+              "es": "de dónde"
+            },
+            {
+              "et": "Eestist",
+              "en": "from Estonia",
+              "fr": "d'Estonie",
+              "es": "de Estonia"
+            },
+            {
+              "et": "Prantsusmaalt",
+              "en": "from France",
+              "fr": "de France",
+              "es": "de Francia"
+            },
+            {
+              "et": "Tallinnast",
+              "en": "from Tallinn",
+              "fr": "de Tallinn",
+              "es": "de Tallin"
+            },
+            {
+              "et": "Eestis",
+              "en": "in Estonia",
+              "fr": "en Estonie",
+              "es": "en Estonia"
+            },
+            {
+              "et": "Tallinnas",
+              "en": "in Tallinn",
+              "fr": "à Tallinn",
+              "es": "en Tallin"
+            },
+            {
+              "et": "elan",
+              "en": "live (I)",
+              "alt_en": [
+                "live"
+              ],
+              "fr": "habite (je)",
+              "es": "vivo",
+              "alt_fr": [
+                "j'habite",
+                "vis"
+              ]
+            },
+            {
+              "et": "elad",
+              "en": "live (you)",
+              "alt_en": [
+                "live"
+              ],
+              "fr": "habites (tu)",
+              "es": "vives",
+              "alt_fr": [
+                "tu habites",
+                "vis"
+              ]
+            }
           ],
           "sentences": [
-            {"et": "Kust sina oled?", "en": "Where are you from?"},
-            {"et": "Mina olen Prantsusmaalt.", "en": "I am from France."},
-            {"et": "Ta on Tallinnast.", "en": "He is from Tallinn.", "alt_en": ["She is from Tallinn."]},
-            {"et": "Mina elan Tallinnas.", "en": "I live in Tallinn."},
-            {"et": "Kas sina elad Eestis?", "en": "Do you live in Estonia?"}
+            {
+              "et": "Kust sina oled?",
+              "en": "Where are you from?",
+              "fr": "D'où es-tu ?",
+              "es": "¿De dónde eres tú?",
+              "alt_fr": [
+                "Tu es d'où ?",
+                "D'où viens-tu ?"
+              ],
+              "alt_es": [
+                "¿De dónde eres?"
+              ]
+            },
+            {
+              "et": "Mina olen Prantsusmaalt.",
+              "en": "I am from France.",
+              "fr": "Je suis de France.",
+              "es": "Yo soy de Francia.",
+              "alt_fr": [
+                "Je viens de France."
+              ],
+              "alt_es": [
+                "Soy de Francia."
+              ]
+            },
+            {
+              "et": "Ta on Tallinnast.",
+              "en": "He is from Tallinn.",
+              "alt_en": [
+                "She is from Tallinn."
+              ],
+              "fr": "Il est de Tallinn.",
+              "es": "Él es de Tallin.",
+              "alt_fr": [
+                "Elle est de Tallinn."
+              ],
+              "alt_es": [
+                "Ella es de Tallin.",
+                "Es de Tallin."
+              ]
+            },
+            {
+              "et": "Mina elan Tallinnas.",
+              "en": "I live in Tallinn.",
+              "fr": "J'habite à Tallinn.",
+              "es": "Yo vivo en Tallin.",
+              "alt_fr": [
+                "Je vis à Tallinn."
+              ],
+              "alt_es": [
+                "Vivo en Tallin."
+              ]
+            },
+            {
+              "et": "Kas sina elad Eestis?",
+              "en": "Do you live in Estonia?",
+              "fr": "Est-ce que tu habites en Estonie ?",
+              "es": "¿Tú vives en Estonia?",
+              "alt_fr": [
+                "Tu habites en Estonie ?",
+                "Habites-tu en Estonie ?"
+              ],
+              "alt_es": [
+                "¿Vives en Estonia?"
+              ]
+            }
           ]
         }
       ]
@@ -212,74 +1292,491 @@
     {
       "id": "u4",
       "title": "Toit",
-      "subtitle": "Food",
-      "tip": "When you eat, drink or want something, the thing takes the partitive case: leib → leiba, vesi → vett, kohv → kohvi, tee → teed. \"Ma joon vett\" = I drink water.",
+      "subtitle": {
+        "en": "Food",
+        "fr": "La nourriture",
+        "es": "Comida"
+      },
+      "tip": {
+        "en": "When you eat, drink or want something, the thing takes the partitive case: leib → leiba, vesi → vett, kohv → kohvi, tee → teed. \"Ma joon vett\" = I drink water.",
+        "fr": "Quand on mange, boit ou veut quelque chose, la chose prend le partitif : leib → leiba, vesi → vett, kohv → kohvi, tee → teed. « Ma joon vett » = je bois de l'eau. Comme le « du / de la » français !",
+        "es": "Cuando comes, bebes o quieres algo, esa cosa va en partitivo: leib → leiba, vesi → vett, kohv → kohvi, tee → teed. «Ma joon vett» = bebo agua."
+      },
       "lessons": [
         {
           "id": "u4l1",
           "title": "See on leib",
           "words": [
-            {"et": "leib", "en": "bread", "alt_en": ["rye bread"]},
-            {"et": "vesi", "en": "water"},
-            {"et": "piim", "en": "milk"},
-            {"et": "kohv", "en": "coffee"},
-            {"et": "tee", "en": "tea"},
-            {"et": "õun", "en": "apple"},
-            {"et": "juust", "en": "cheese"}
+            {
+              "et": "leib",
+              "en": "bread",
+              "alt_en": [
+                "rye bread"
+              ],
+              "fr": "pain",
+              "es": "pan",
+              "alt_fr": [
+                "pain noir"
+              ],
+              "alt_es": [
+                "pan de centeno"
+              ]
+            },
+            {
+              "et": "vesi",
+              "en": "water",
+              "fr": "eau",
+              "es": "agua"
+            },
+            {
+              "et": "piim",
+              "en": "milk",
+              "fr": "lait",
+              "es": "leche"
+            },
+            {
+              "et": "kohv",
+              "en": "coffee",
+              "fr": "café",
+              "es": "café",
+              "alt_fr": [
+                "du café"
+              ]
+            },
+            {
+              "et": "tee",
+              "en": "tea",
+              "fr": "thé",
+              "es": "té"
+            },
+            {
+              "et": "õun",
+              "en": "apple",
+              "fr": "pomme",
+              "es": "manzana"
+            },
+            {
+              "et": "juust",
+              "en": "cheese",
+              "fr": "fromage",
+              "es": "queso"
+            }
           ],
           "sentences": [
-            {"et": "See on leib.", "en": "This is bread.", "alt_en": ["It is bread.", "That is bread."]},
-            {"et": "See on kohv ja piim.", "en": "This is coffee and milk.", "alt_en": ["It is coffee and milk."]},
-            {"et": "Kas see on tee?", "en": "Is this tea?", "alt_en": ["Is it tea?"]},
-            {"et": "See on õun ja juust.", "en": "This is an apple and cheese.", "alt_en": ["It is an apple and cheese."]},
-            {"et": "Ei, see on vesi.", "en": "No, this is water.", "alt_en": ["No, it is water."]}
+            {
+              "et": "See on leib.",
+              "en": "This is bread.",
+              "alt_en": [
+                "It is bread.",
+                "That is bread."
+              ],
+              "fr": "C'est du pain.",
+              "es": "Esto es pan.",
+              "alt_es": [
+                "Es pan."
+              ]
+            },
+            {
+              "et": "See on kohv ja piim.",
+              "en": "This is coffee and milk.",
+              "alt_en": [
+                "It is coffee and milk."
+              ],
+              "fr": "C'est du café et du lait.",
+              "es": "Esto es café y leche.",
+              "alt_es": [
+                "Es café y leche."
+              ]
+            },
+            {
+              "et": "Kas see on tee?",
+              "en": "Is this tea?",
+              "alt_en": [
+                "Is it tea?"
+              ],
+              "fr": "Est-ce du thé ?",
+              "es": "¿Esto es té?",
+              "alt_fr": [
+                "C'est du thé ?",
+                "Est-ce que c'est du thé ?"
+              ],
+              "alt_es": [
+                "¿Es té?"
+              ]
+            },
+            {
+              "et": "See on õun ja juust.",
+              "en": "This is an apple and cheese.",
+              "alt_en": [
+                "It is an apple and cheese."
+              ],
+              "fr": "C'est une pomme et du fromage.",
+              "es": "Esto es una manzana y queso.",
+              "alt_es": [
+                "Es una manzana y queso."
+              ]
+            },
+            {
+              "et": "Ei, see on vesi.",
+              "en": "No, this is water.",
+              "alt_en": [
+                "No, it is water."
+              ],
+              "fr": "Non, c'est de l'eau.",
+              "es": "No, esto es agua.",
+              "alt_es": [
+                "No, es agua."
+              ]
+            }
           ]
         },
         {
           "id": "u4l2",
           "title": "Ma söön ja joon",
           "words": [
-            {"et": "ma", "en": "I"},
-            {"et": "söön", "en": "eat (I)", "alt_en": ["eat"]},
-            {"et": "joon", "en": "drink (I)", "alt_en": ["drink"]},
-            {"et": "tahan", "en": "want (I)", "alt_en": ["want"]},
-            {"et": "tahad", "en": "want (you)", "alt_en": ["want"]},
-            {"et": "leiba", "en": "bread (object)", "alt_en": ["bread"]},
-            {"et": "vett", "en": "water (object)", "alt_en": ["water"]},
-            {"et": "kohvi", "en": "coffee (object)", "alt_en": ["coffee"]},
-            {"et": "teed", "en": "tea (object)", "alt_en": ["tea"]},
-            {"et": "õuna", "en": "apple (object)", "alt_en": ["apple"]}
+            {
+              "et": "ma",
+              "en": "I",
+              "fr": "je",
+              "es": "yo"
+            },
+            {
+              "et": "söön",
+              "en": "eat (I)",
+              "alt_en": [
+                "eat"
+              ],
+              "fr": "mange (je)",
+              "es": "como",
+              "alt_fr": [
+                "je mange",
+                "mange"
+              ]
+            },
+            {
+              "et": "joon",
+              "en": "drink (I)",
+              "alt_en": [
+                "drink"
+              ],
+              "fr": "bois (je)",
+              "es": "bebo",
+              "alt_fr": [
+                "je bois",
+                "bois"
+              ]
+            },
+            {
+              "et": "tahan",
+              "en": "want (I)",
+              "alt_en": [
+                "want"
+              ],
+              "fr": "veux (je)",
+              "es": "quiero",
+              "alt_fr": [
+                "je veux",
+                "veux"
+              ]
+            },
+            {
+              "et": "tahad",
+              "en": "want (you)",
+              "alt_en": [
+                "want"
+              ],
+              "fr": "veux (tu)",
+              "es": "quieres",
+              "alt_fr": [
+                "tu veux",
+                "veux"
+              ]
+            },
+            {
+              "et": "leiba",
+              "en": "bread (object)",
+              "alt_en": [
+                "bread"
+              ],
+              "fr": "du pain",
+              "es": "pan (objeto)",
+              "alt_es": [
+                "pan"
+              ]
+            },
+            {
+              "et": "vett",
+              "en": "water (object)",
+              "alt_en": [
+                "water"
+              ],
+              "fr": "de l'eau",
+              "es": "agua (objeto)",
+              "alt_es": [
+                "agua"
+              ]
+            },
+            {
+              "et": "kohvi",
+              "en": "coffee (object)",
+              "alt_en": [
+                "coffee"
+              ],
+              "fr": "du café",
+              "es": "café (objeto)",
+              "alt_es": [
+                "café"
+              ]
+            },
+            {
+              "et": "teed",
+              "en": "tea (object)",
+              "alt_en": [
+                "tea"
+              ],
+              "fr": "du thé",
+              "es": "té (objeto)",
+              "alt_es": [
+                "té"
+              ]
+            },
+            {
+              "et": "õuna",
+              "en": "apple (object)",
+              "alt_en": [
+                "apple"
+              ],
+              "fr": "une pomme",
+              "es": "manzana (objeto)",
+              "alt_es": [
+                "manzana",
+                "una manzana"
+              ]
+            }
           ],
           "sentences": [
-            {"et": "Ma söön leiba.", "en": "I eat bread.", "alt_en": ["I am eating bread."]},
-            {"et": "Ma joon vett.", "en": "I drink water.", "alt_en": ["I am drinking water."]},
-            {"et": "Ma tahan kohvi.", "en": "I want coffee."},
-            {"et": "Kas sa tahad teed?", "en": "Do you want tea?"},
-            {"et": "Ma söön õuna.", "en": "I eat an apple.", "alt_en": ["I am eating an apple."]}
+            {
+              "et": "Ma söön leiba.",
+              "en": "I eat bread.",
+              "alt_en": [
+                "I am eating bread."
+              ],
+              "fr": "Je mange du pain.",
+              "es": "Yo como pan.",
+              "alt_es": [
+                "Como pan."
+              ]
+            },
+            {
+              "et": "Ma joon vett.",
+              "en": "I drink water.",
+              "alt_en": [
+                "I am drinking water."
+              ],
+              "fr": "Je bois de l'eau.",
+              "es": "Yo bebo agua.",
+              "alt_es": [
+                "Bebo agua."
+              ]
+            },
+            {
+              "et": "Ma tahan kohvi.",
+              "en": "I want coffee.",
+              "fr": "Je veux du café.",
+              "es": "Yo quiero café.",
+              "alt_fr": [
+                "Je voudrais du café."
+              ],
+              "alt_es": [
+                "Quiero café."
+              ]
+            },
+            {
+              "et": "Kas sa tahad teed?",
+              "en": "Do you want tea?",
+              "fr": "Veux-tu du thé ?",
+              "es": "¿Quieres té?",
+              "alt_fr": [
+                "Tu veux du thé ?",
+                "Est-ce que tu veux du thé ?"
+              ],
+              "alt_es": [
+                "¿Tú quieres té?"
+              ]
+            },
+            {
+              "et": "Ma söön õuna.",
+              "en": "I eat an apple.",
+              "alt_en": [
+                "I am eating an apple."
+              ],
+              "fr": "Je mange une pomme.",
+              "es": "Yo como una manzana.",
+              "alt_es": [
+                "Como una manzana."
+              ]
+            }
           ]
         },
         {
           "id": "u4l3",
           "title": "Kohvikus",
           "words": [
-            {"et": "kohvik", "en": "café", "alt_en": ["cafe", "coffee shop"]},
-            {"et": "kohvikus", "en": "in the café", "alt_en": ["in the cafe", "at the café"]},
-            {"et": "arve", "en": "the bill", "alt_en": ["bill", "check"]},
-            {"et": "maitsev", "en": "tasty", "alt_en": ["delicious"]},
-            {"et": "head isu", "en": "enjoy your meal", "alt_en": ["bon appétit"]},
-            {"et": "üks kohv", "en": "one coffee"},
-            {"et": "kaks kohvi", "en": "two coffees"}
+            {
+              "et": "kohvik",
+              "en": "café",
+              "alt_en": [
+                "cafe",
+                "coffee shop"
+              ],
+              "fr": "café (lieu)",
+              "es": "cafetería",
+              "alt_fr": [
+                "un café"
+              ]
+            },
+            {
+              "et": "kohvikus",
+              "en": "in the café",
+              "alt_en": [
+                "in the cafe",
+                "at the café"
+              ],
+              "fr": "au café",
+              "es": "en la cafetería",
+              "alt_es": [
+                "en el café"
+              ]
+            },
+            {
+              "et": "arve",
+              "en": "the bill",
+              "alt_en": [
+                "bill",
+                "check"
+              ],
+              "fr": "l'addition",
+              "es": "la cuenta",
+              "alt_fr": [
+                "addition"
+              ],
+              "alt_es": [
+                "cuenta"
+              ]
+            },
+            {
+              "et": "maitsev",
+              "en": "tasty",
+              "alt_en": [
+                "delicious"
+              ],
+              "fr": "délicieux",
+              "es": "sabroso",
+              "alt_fr": [
+                "bon",
+                "savoureux"
+              ],
+              "alt_es": [
+                "rico",
+                "delicioso"
+              ]
+            },
+            {
+              "et": "head isu",
+              "en": "enjoy your meal",
+              "alt_en": [
+                "bon appétit"
+              ],
+              "fr": "bon appétit",
+              "es": "buen provecho",
+              "alt_es": [
+                "que aproveche"
+              ]
+            },
+            {
+              "et": "üks kohv",
+              "en": "one coffee",
+              "fr": "un café",
+              "es": "un café"
+            },
+            {
+              "et": "kaks kohvi",
+              "en": "two coffees",
+              "fr": "deux cafés",
+              "es": "dos cafés"
+            }
           ],
           "sentences": [
-            {"et": "Üks kohv, palun.", "en": "One coffee, please."},
-            {"et": "Kaks kohvi, palun.", "en": "Two coffees, please."},
-            {"et": "Arve, palun.", "en": "The bill, please."},
-            {"et": "See on maitsev.", "en": "This is tasty.", "alt_en": ["It is tasty.", "This is delicious."]},
-            {"et": "Head isu!", "en": "Enjoy your meal!", "alt_en": ["Bon appétit!"]},
-            {"et": "Mina olen kohvikus.", "en": "I am in the café.", "alt_en": ["I am at the café.", "I am in the cafe."]}
+            {
+              "et": "Üks kohv, palun.",
+              "en": "One coffee, please.",
+              "fr": "Un café, s'il vous plaît.",
+              "es": "Un café, por favor."
+            },
+            {
+              "et": "Kaks kohvi, palun.",
+              "en": "Two coffees, please.",
+              "fr": "Deux cafés, s'il vous plaît.",
+              "es": "Dos cafés, por favor."
+            },
+            {
+              "et": "Arve, palun.",
+              "en": "The bill, please.",
+              "fr": "L'addition, s'il vous plaît.",
+              "es": "La cuenta, por favor."
+            },
+            {
+              "et": "See on maitsev.",
+              "en": "This is tasty.",
+              "alt_en": [
+                "It is tasty.",
+                "This is delicious."
+              ],
+              "fr": "C'est délicieux.",
+              "es": "Esto es sabroso.",
+              "alt_fr": [
+                "C'est bon."
+              ],
+              "alt_es": [
+                "Está rico.",
+                "Es delicioso.",
+                "Está sabroso."
+              ]
+            },
+            {
+              "et": "Head isu!",
+              "en": "Enjoy your meal!",
+              "alt_en": [
+                "Bon appétit!"
+              ],
+              "fr": "Bon appétit !",
+              "es": "¡Buen provecho!",
+              "alt_es": [
+                "¡Que aproveche!"
+              ]
+            },
+            {
+              "et": "Mina olen kohvikus.",
+              "en": "I am in the café.",
+              "alt_en": [
+                "I am at the café.",
+                "I am in the cafe."
+              ],
+              "fr": "Je suis au café.",
+              "es": "Yo estoy en la cafetería.",
+              "alt_es": [
+                "Estoy en la cafetería.",
+                "Estoy en el café."
+              ]
+            }
           ]
         }
       ]
     }
+  ],
+  "learner_languages": [
+    "en",
+    "fr",
+    "es"
   ]
 }

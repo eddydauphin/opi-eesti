@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import '../l10n/strings.dart';
 import '../models/course.dart';
 import '../models/exercise.dart';
 import 'text_utils.dart';
@@ -10,10 +11,16 @@ import 'text_utils.dart';
 /// into multiple-choice, word-bank, listening and matching exercises, with
 /// distractors drawn from the rest of the course.
 class ExerciseGenerator {
-  ExerciseGenerator(this.course, {Random? random}) : _rng = random ?? Random();
+  ExerciseGenerator(this.course, {this.lang = 'en', Random? random})
+      : _rng = random ?? Random(),
+        _s = Strings.of(lang);
 
   final Course course;
+
+  /// The learner's language: translations and prompts are in it.
+  final String lang;
   final Random _rng;
+  final Strings _s;
 
   /// Exercises for one lesson, in a sensible teaching order: new words are
   /// introduced with easy picks first, then sentences, then recall.
@@ -45,10 +52,10 @@ class ExerciseGenerator {
         default:
           if (includeListening) {
             out.add(ListenTypeExercise(
-              prompt: 'Type what you hear',
+              prompt: _s.typeWhatYouHear,
               wordKeys: knownWords,
               speakText: s.et,
-              translation: s.en,
+              translation: s.meaning(lang),
             ));
           } else {
             out.add(_buildSentence(s, knownWords, enToEt: true));
@@ -99,27 +106,29 @@ class ExerciseGenerator {
   }
 
   ChoiceExercise _choice(Word word, List<Word> pool, {required bool etToEn}) {
+    final answer = etToEn ? word.meaning(lang) : word.et;
     final others = pool.where((w) => w.et != word.et).toList()..shuffle(_rng);
     final distractors = <String>{};
     for (final o in others) {
-      final text = etToEn ? o.en : o.et;
-      if (text != (etToEn ? word.en : word.et)) distractors.add(text);
+      final text = etToEn ? o.meaning(lang) : o.et;
+      if (text != answer) distractors.add(text);
       if (distractors.length == 3) break;
     }
     // Small units: top up from the whole course.
     if (distractors.length < 3) {
       final all = course.allWords.where((w) => w.et != word.et).toList()..shuffle(_rng);
       for (final o in all) {
-        distractors.add(etToEn ? o.en : o.et);
+        final text = etToEn ? o.meaning(lang) : o.et;
+        if (text != answer) distractors.add(text);
         if (distractors.length == 3) break;
       }
     }
-    final options = [...distractors, etToEn ? word.en : word.et]..shuffle(_rng);
-    final correct = options.indexOf(etToEn ? word.en : word.et);
+    final options = [...distractors, answer]..shuffle(_rng);
+    final correct = options.indexOf(answer);
     return ChoiceExercise(
-      prompt: etToEn ? 'What does this mean?' : 'Which is the Estonian word?',
+      prompt: etToEn ? _s.whatDoesThisMean : _s.whichEstonianWord,
       wordKeys: [word.et],
-      question: etToEn ? word.et : word.en,
+      question: etToEn ? word.et : word.meaning(lang),
       options: options,
       correctIndex: correct,
       speakText: etToEn ? word.et : null,
@@ -128,9 +137,9 @@ class ExerciseGenerator {
 
   MatchPairsExercise _matchPairs(List<Word> words) {
     final picked = [...words]..shuffle(_rng);
-    final pairs = [for (final w in picked.take(5)) (w.et, w.en)];
+    final pairs = [for (final w in picked.take(5)) (w.et, w.meaning(lang))];
     return MatchPairsExercise(
-      prompt: 'Tap the matching pairs',
+      prompt: _s.tapMatchingPairs,
       wordKeys: [for (final p in pairs) p.$1],
       pairs: pairs,
     );
@@ -138,12 +147,12 @@ class ExerciseGenerator {
 
   BuildSentenceExercise _buildSentence(Sentence s, List<String> wordKeys,
       {required bool enToEt}) {
-    final answer = tokenize(enToEt ? s.et : s.en);
+    final answer = tokenize(enToEt ? s.et : s.meaning(lang));
     final distractorPool = <String>{};
     final pool = [...course.allWords]..shuffle(_rng);
     final answerLower = answer.map((t) => t.toLowerCase()).toSet();
     for (final w in pool) {
-      final text = enToEt ? w.et : w.en;
+      final text = enToEt ? w.et : w.meaning(lang);
       // Only single words make good bank distractors.
       if (text.contains(' ') || text.contains('(')) continue;
       if (answerLower.contains(text.toLowerCase())) continue;
@@ -152,12 +161,12 @@ class ExerciseGenerator {
     }
     final bank = [...answer, ...distractorPool]..shuffle(_rng);
     return BuildSentenceExercise(
-      prompt: enToEt ? 'Translate into Estonian' : 'Translate into English',
+      prompt: enToEt ? _s.translateIntoEstonian : _s.translateIntoYourLanguage,
       wordKeys: wordKeys,
-      source: enToEt ? s.en : s.et,
+      source: enToEt ? s.meaning(lang) : s.et,
       answerTokens: answer,
       bank: bank,
-      acceptedAnswers: enToEt ? [s.et] : s.acceptedEn,
+      acceptedAnswers: enToEt ? [s.et] : s.accepted(lang),
       speakText: enToEt ? null : s.et,
     );
   }

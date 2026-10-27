@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../app_scope.dart';
 import '../../models/exercise.dart';
 import 'speaker_button.dart';
 
@@ -20,13 +21,14 @@ class ListenTypeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppScope.of(context).strings;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Center(child: SpeakerButton(text: exercise.speakText, large: true)),
         const SizedBox(height: 8),
-        const Center(
-          child: Text('Tap to listen · hold for slow', style: TextStyle(color: Colors.black54)),
+        Center(
+          child: Text(t.tapToListen, style: const TextStyle(color: Colors.black54)),
         ),
         const SizedBox(height: 24),
         TextField(
@@ -37,9 +39,9 @@ class ListenTypeView extends StatelessWidget {
           enableSuggestions: false,
           textCapitalization: TextCapitalization.sentences,
           style: const TextStyle(fontSize: 20),
-          decoration: const InputDecoration(
-            hintText: 'Type in Estonian',
-            border: OutlineInputBorder(),
+          decoration: InputDecoration(
+            hintText: t.typeInEstonian,
+            border: const OutlineInputBorder(),
           ),
           maxLines: 2,
         ),
@@ -48,7 +50,7 @@ class ListenTypeView extends StatelessWidget {
           alignment: Alignment.centerRight,
           child: TextButton(
             onPressed: locked ? null : onSkipListening,
-            child: const Text("Can't listen now"),
+            child: Text(t.cantListenNow),
           ),
         ),
       ],

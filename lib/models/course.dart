@@ -1,15 +1,26 @@
 /// Course content model. The whole course ships inside the app as a JSON
 /// asset, so everything here works with no network connection.
+///
+/// Estonian is always the target language. Every word and sentence carries
+/// translations in each supported learner language ("en", "fr", "es").
 class Course {
-  Course({required this.title, required this.language, required this.units});
+  Course({
+    required this.title,
+    required this.language,
+    required this.learnerLanguages,
+    required this.units,
+  });
 
   final String title;
   final String language;
+  final List<String> learnerLanguages;
   final List<Unit> units;
 
   factory Course.fromJson(Map<String, dynamic> json) => Course(
         title: json['title'] as String,
         language: json['language'] as String,
+        learnerLanguages:
+            ((json['learner_languages'] as List?) ?? const ['en']).cast<String>(),
         units: (json['units'] as List)
             .map((u) => Unit.fromJson(u as Map<String, dynamic>))
             .toList(),
@@ -43,26 +54,44 @@ class Course {
   }
 }
 
+/// Text that exists in each learner language, e.g. a unit subtitle or tip.
+class LocalizedText {
+  LocalizedText(this._byLang);
+
+  final Map<String, String> _byLang;
+
+  /// Accepts either a plain string (treated as English) or a language map.
+  factory LocalizedText.fromJson(Object? json) {
+    if (json == null) return LocalizedText(const {});
+    if (json is String) return LocalizedText({'en': json});
+    return LocalizedText((json as Map).cast<String, String>());
+  }
+
+  bool get isEmpty => _byLang.isEmpty;
+
+  String of(String lang) => _byLang[lang] ?? _byLang['en'] ?? _byLang.values.firstOrNull ?? '';
+}
+
 class Unit {
   Unit({
     required this.id,
     required this.title,
     required this.subtitle,
     required this.lessons,
-    this.tip,
+    required this.tip,
   });
 
   final String id;
   final String title;
-  final String subtitle;
-  final String? tip;
+  final LocalizedText subtitle;
+  final LocalizedText tip;
   final List<Lesson> lessons;
 
   factory Unit.fromJson(Map<String, dynamic> json) => Unit(
         id: json['id'] as String,
         title: json['title'] as String,
-        subtitle: json['subtitle'] as String? ?? '',
-        tip: json['tip'] as String?,
+        subtitle: LocalizedText.fromJson(json['subtitle']),
+        tip: LocalizedText.fromJson(json['tip']),
         lessons: (json['lessons'] as List)
             .map((l) => Lesson.fromJson(l as Map<String, dynamic>))
             .toList(),
@@ -77,19 +106,19 @@ class Lesson {
     required this.title,
     required this.words,
     required this.sentences,
-    this.tip,
+    required this.tip,
   });
 
   final String id;
   final String title;
-  final String? tip;
+  final LocalizedText tip;
   final List<Word> words;
   final List<Sentence> sentences;
 
   factory Lesson.fromJson(Map<String, dynamic> json) => Lesson(
         id: json['id'] as String,
         title: json['title'] as String,
-        tip: json['tip'] as String?,
+        tip: LocalizedText.fromJson(json['tip']),
         words: (json['words'] as List)
             .map((w) => Word.fromJson(w as Map<String, dynamic>))
             .toList(),
@@ -99,36 +128,56 @@ class Lesson {
       );
 }
 
-/// A vocabulary item: one Estonian word or short phrase and its meaning.
+/// Parses the `en` / `alt_en`, `fr` / `alt_fr`, ... keys of a content entry
+/// into a map from language to accepted translations, primary first.
+Map<String, List<String>> _translationsFromJson(Map<String, dynamic> json) {
+  final out = <String, List<String>>{};
+  for (final e in json.entries) {
+    if (e.key == 'et' || e.key.startsWith('alt_')) continue;
+    if (e.value is! String) continue;
+    final alts = (json['alt_${e.key}'] as List? ?? const []).cast<String>();
+    out[e.key] = [e.value as String, ...alts];
+  }
+  return out;
+}
+
+/// A vocabulary item: one Estonian word or short phrase and its meanings.
 class Word {
-  Word({required this.et, required this.en, this.altEn = const []});
+  Word({required this.et, required this.translations});
 
   final String et;
-  final String en;
-  final List<String> altEn;
+
+  /// Language code to accepted translations, primary first.
+  final Map<String, List<String>> translations;
 
   factory Word.fromJson(Map<String, dynamic> json) => Word(
         et: json['et'] as String,
-        en: json['en'] as String,
-        altEn: (json['alt_en'] as List? ?? const []).cast<String>(),
+        translations: _translationsFromJson(json),
       );
 
-  List<String> get acceptedEn => [en, ...altEn];
+  /// The main translation shown to the learner.
+  String meaning(String lang) =>
+      translations[lang]?.first ?? translations['en']?.first ?? et;
+
+  List<String> accepted(String lang) =>
+      translations[lang] ?? translations['en'] ?? const [];
 }
 
 /// A full sentence used for translation and listening exercises.
 class Sentence {
-  Sentence({required this.et, required this.en, this.altEn = const []});
+  Sentence({required this.et, required this.translations});
 
   final String et;
-  final String en;
-  final List<String> altEn;
+  final Map<String, List<String>> translations;
 
   factory Sentence.fromJson(Map<String, dynamic> json) => Sentence(
         et: json['et'] as String,
-        en: json['en'] as String,
-        altEn: (json['alt_en'] as List? ?? const []).cast<String>(),
+        translations: _translationsFromJson(json),
       );
 
-  List<String> get acceptedEn => [en, ...altEn];
+  String meaning(String lang) =>
+      translations[lang]?.first ?? translations['en']?.first ?? et;
+
+  List<String> accepted(String lang) =>
+      translations[lang] ?? translations['en'] ?? const [];
 }
